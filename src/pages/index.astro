@@ -1,0 +1,490 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const features = [
+  {
+    icon: '🤖',
+    title: 'AIコーチ',
+    description: 'パーソナライズされたアドバイスで目標達成をサポート',
+  },
+  {
+    icon: '📸',
+    title: '自動ログ取り込み',
+    description: 'スクリーンショットから走行データを自動認識',
+  },
+  {
+    icon: '📅',
+    title: 'トレーニングプラン',
+    description: '週間プランを自動生成し、効率的な練習をサポート',
+  },
+  {
+    icon: '🎯',
+    title: 'ペーシング戦略',
+    description: '目標レースに向けた最適なペース配分を提案',
+  },
+];
+---
+
+<Layout 
+  title="ホーム" 
+  description="Creative Life Labo - ライフスタイル向上のためのアプリ・サービス開発。AIコーチ付きランニング日誌アプリ「Run Diary」を提供しています。"
+>
+  <Header currentPath="/" />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            テクノロジーで、<br />
+            <span class="gradient-text">ライフスタイルを向上</span>
+          </h1>
+          <p class="hero-description">
+            Creative Life Laboは、日々の生活をより豊かにするアプリ・サービスを開発しています。
+            AIを活用したスマートなソリューションで、あなたの目標達成をサポートします。
+          </p>
+          <div class="hero-buttons">
+            <a href="/products/run-diary" class="btn btn-primary">
+              プロダクトを見る
+            </a>
+            <a href="/about" class="btn btn-secondary">
+              会社について
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg"></div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="section products">
+      <div class="container">
+        <div class="section-title">
+          <h2>プロダクト</h2>
+          <p>私たちが開発したアプリ・サービス</p>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-content">
+            <span class="product-badge">ランニングアプリ</span>
+            <h3 class="product-title">Run Diary</h3>
+            <p class="product-subtitle">AIコーチ付きランニング日誌</p>
+            <p class="product-description">
+              Google Gemini AIを搭載したランニング日誌アプリ。
+              スクリーンショットからの自動ログ取り込み、週間トレーニングプラン自動生成、
+              目標レースに向けたペーシング戦略など、マラソン完走を目指すランナーから
+              サブ4〜サブ3を目指す中級ランナーまで幅広くサポートします。
+            </p>
+            
+            <div class="product-features">
+              {features.map(feature => (
+                <div class="feature-item">
+                  <span class="feature-icon">{feature.icon}</span>
+                  <div>
+                    <h4>{feature.title}</h4>
+                    <p>{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div class="product-buttons">
+              <a href="/products/run-diary" class="btn btn-primary">
+                詳細を見る
+              </a>
+              <a href="https://run-diary-2026.web.app" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">
+                アプリを使う →
+              </a>
+            </div>
+          </div>
+          
+          <div class="product-image">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="app-header">
+                  <span>🏃</span>
+                  <span>Run Diary</span>
+                </div>
+                <div class="app-content">
+                  <div class="stat-card">
+                    <div class="stat-value">42.195</div>
+                    <div class="stat-label">km</div>
+                  </div>
+                  <div class="chat-bubble">
+                    <span>🤖</span>
+                    <p>今週の走行距離は順調です！次のレースに向けて、少しペースを上げていきましょう。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Company Section -->
+    <section class="section company">
+      <div class="container">
+        <div class="section-title">
+          <h2>会社概要</h2>
+          <p>Creative Life Laboについて</p>
+        </div>
+        
+        <div class="company-content">
+          <div class="company-card">
+            <div class="company-icon">🎯</div>
+            <h3>ミッション</h3>
+            <p>テクノロジーの力で、人々の日常生活をより豊かに、より効率的にすること</p>
+          </div>
+          
+          <div class="company-card">
+            <div class="company-icon">🌟</div>
+            <h3>ビジョン</h3>
+            <p>誰もが自分らしいライフスタイルを実現できる世界を創る</p>
+          </div>
+          
+          <div class="company-card">
+            <div class="company-icon">💡</div>
+            <h3>アプローチ</h3>
+            <p>最新のAI技術を活用し、パーソナライズされた体験を提供する</p>
+          </div>
+        </div>
+        
+        <div class="company-cta">
+          <a href="/about" class="btn btn-secondary">
+            詳しく見る →
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>お問い合わせ</h2>
+          <p>
+            プロダクトに関するご質問、パートナーシップのご相談など、
+            お気軽にお問い合わせください。
+          </p>
+          <a href="/contact" class="btn btn-primary">
+            お問い合わせはこちら
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-description {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .hero-bg {
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 70%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+    z-index: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding: 4rem 0;
+    }
+    
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-description {
+      font-size: 1.1rem;
+    }
+  }
+  
+  /* Products */
+  .products {
+    background-color: var(--color-bg-alt);
+  }
+  
+  .product-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .product-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1rem;
+  }
+  
+  .product-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .product-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-description {
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  
+  .product-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .feature-item {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .feature-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .feature-item h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .feature-item p {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+  }
+  
+  .product-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Phone Mockup */
+  .product-image {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .phone-mockup {
+    width: 280px;
+    height: 560px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #0f172a, #1e293b);
+    border-radius: 28px;
+    overflow: hidden;
+    padding: 1rem;
+  }
+  
+  .app-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .app-content {
+    padding: 1rem;
+  }
+  
+  .stat-card {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .stat-value {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .stat-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.25rem;
+  }
+  
+  .chat-bubble {
+    display: flex;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+  }
+  
+  .chat-bubble span {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .chat-bubble p {
+    color: white;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 960px) {
+    .product-card {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .product-image {
+      order: -1;
+    }
+    
+    .product-features {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Company */
+  .company-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .company-card {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  
+  .company-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .company-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .company-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .company-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+  
+  .company-cta {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  @media (max-width: 768px) {
+    .company-content {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  }
+  
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .cta p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  
+  .cta .btn-primary {
+    background-color: white;
+    color: var(--color-primary);
+  }
+  
+  .cta .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+</style>

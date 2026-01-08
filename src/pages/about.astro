@@ -1,0 +1,373 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const values = [
+  {
+    icon: '🎯',
+    title: 'ユーザー中心',
+    description: 'すべての機能はユーザーの課題解決から始まります。技術ありきではなく、本当に必要な価値を提供します。',
+  },
+  {
+    icon: '🚀',
+    title: 'イノベーション',
+    description: '最新のAI技術を積極的に取り入れ、従来のアプリでは実現できなかった体験を創出します。',
+  },
+  {
+    icon: '💎',
+    title: 'クオリティ',
+    description: '細部にこだわり、使い心地の良いプロダクトを追求。長く愛用いただけるサービスを目指します。',
+  },
+  {
+    icon: '🌱',
+    title: '持続可能性',
+    description: 'ユーザーの生活に寄り添い、長期的に価値を提供できるサービス設計を心がけています。',
+  },
+];
+---
+
+<Layout 
+  title="会社概要" 
+  description="Creative Life Laboは、テクノロジーで人々のライフスタイルを向上させることをミッションとしています。AIを活用したアプリ・サービスの開発を行っています。"
+>
+  <Header currentPath="/about" />
+  
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>会社概要</h1>
+        <p class="subtitle">Creative Life Laboについて</p>
+      </div>
+    </section>
+    
+    <!-- Mission -->
+    <section class="section mission">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-content">
+            <h2>ミッション</h2>
+            <p class="mission-text">
+              テクノロジーの力で、<br />
+              人々の日常生活をより豊かに、<br />
+              より効率的にすること。
+            </p>
+            <p class="mission-description">
+              私たちは、複雑なテクノロジーをシンプルで使いやすい形に変え、
+              誰もが日々の生活で恩恵を受けられるプロダクトを開発しています。
+              AIを活用したパーソナライズされた体験を通じて、
+              一人ひとりの目標達成をサポートします。
+            </p>
+          </div>
+          
+          <div class="vision-content">
+            <h2>ビジョン</h2>
+            <p class="vision-text">
+              誰もが自分らしい<br />
+              ライフスタイルを実現できる<br />
+              世界を創る。
+            </p>
+            <p class="vision-description">
+              健康、学習、趣味、仕事—人生のあらゆる側面において、
+              テクノロジーが寄り添い、個人の可能性を最大限に引き出す。
+              そんな未来を目指して、私たちはプロダクト開発に取り組んでいます。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Values -->
+    <section class="section values">
+      <div class="container">
+        <div class="section-title">
+          <h2>バリュー</h2>
+          <p>私たちが大切にしている価値観</p>
+        </div>
+        
+        <div class="values-grid">
+          {values.map(value => (
+            <div class="value-card">
+              <div class="value-icon">{value.icon}</div>
+              <h3>{value.title}</h3>
+              <p>{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Company Info -->
+    <section class="section company-info">
+      <div class="container">
+        <div class="section-title">
+          <h2>会社情報</h2>
+        </div>
+        
+        <div class="info-card">
+          <table class="info-table">
+            <tbody>
+              <tr>
+                <th>会社名</th>
+                <td>Creative Life Labo</td>
+              </tr>
+              <tr>
+                <th>ウェブサイト</th>
+                <td><a href="https://1cll.com">https://1cll.com</a></td>
+              </tr>
+              <tr>
+                <th>事業内容</th>
+                <td>ライフスタイル向上のためのアプリ・サービス開発</td>
+              </tr>
+              <tr>
+                <th>主要プロダクト</th>
+                <td><a href="/products/run-diary">Run Diary</a>（AIコーチ付きランニング日誌）</td>
+              </tr>
+              <tr>
+                <th>お問い合わせ</th>
+                <td><a href="/contact">お問い合わせフォーム</a>よりご連絡ください</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>お問い合わせ</h2>
+          <p>
+            サービスに関するご質問、パートナーシップのご相談など、
+            お気軽にお問い合わせください。
+          </p>
+          <a href="/contact" class="btn btn-primary">
+            お問い合わせはこちら
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+  }
+  
+  /* Mission */
+  .mission {
+    background-color: var(--color-bg);
+  }
+  
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+  }
+  
+  .mission-content h2,
+  .vision-content h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+    margin-bottom: 1.5rem;
+  }
+  
+  .mission-text,
+  .vision-text {
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+  
+  .mission-description,
+  .vision-description {
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+  
+  @media (max-width: 768px) {
+    .mission-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .mission-text,
+    .vision-text {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Values */
+  .values {
+    background-color: var(--color-bg-alt);
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .value-card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  
+  .value-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .value-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .value-card h3 {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+  
+  .value-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+  }
+  
+  @media (max-width: 960px) {
+    .values-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Company Info */
+  .company-info {
+    background-color: var(--color-bg);
+  }
+  
+  .info-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+  }
+  
+  .info-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .info-table tr {
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .info-table tr:last-child {
+    border-bottom: none;
+  }
+  
+  .info-table th,
+  .info-table td {
+    padding: 1rem 0;
+    text-align: left;
+  }
+  
+  .info-table th {
+    width: 160px;
+    font-weight: 600;
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+  }
+  
+  .info-table td {
+    color: var(--color-text);
+  }
+  
+  .info-table a {
+    color: var(--color-primary);
+  }
+  
+  .info-table a:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 600px) {
+    .info-table th,
+    .info-table td {
+      display: block;
+      padding: 0.5rem 0;
+    }
+    
+    .info-table th {
+      width: 100%;
+      padding-top: 1rem;
+    }
+    
+    .info-table tr {
+      padding: 0.5rem 0;
+    }
+  }
+  
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  }
+  
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .cta p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  
+  .cta .btn-primary {
+    background-color: white;
+    color: var(--color-primary);
+  }
+  
+  .cta .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+</style>

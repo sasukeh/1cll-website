@@ -1,0 +1,347 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout 
+  title="お問い合わせ" 
+  description="Creative Life Laboへのお問い合わせはこちら。プロダクトに関するご質問、パートナーシップのご相談など、お気軽にご連絡ください。"
+>
+  <Header currentPath="/contact" />
+  
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>お問い合わせ</h1>
+        <p class="subtitle">ご質問・ご相談はお気軽にどうぞ</p>
+      </div>
+    </section>
+    
+    <!-- Contact Form -->
+    <section class="section contact">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>お問い合わせ方法</h2>
+            <p class="info-description">
+              以下のフォームからお問い合わせいただくか、メールにて直接ご連絡ください。
+              通常2〜3営業日以内にご返信いたします。
+            </p>
+            
+            <div class="contact-methods">
+              <div class="method">
+                <div class="method-icon">📧</div>
+                <div class="method-content">
+                  <h3>メール</h3>
+                  <a href="mailto:contact@1cll.com">contact@1cll.com</a>
+                </div>
+              </div>
+              
+              <div class="method">
+                <div class="method-icon">🌐</div>
+                <div class="method-content">
+                  <h3>ウェブサイト</h3>
+                  <a href="https://1cll.com">https://1cll.com</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="inquiry-types">
+              <h3>よくあるお問い合わせ</h3>
+              <ul>
+                <li>プロダクトに関するご質問</li>
+                <li>技術的なサポート</li>
+                <li>パートナーシップのご相談</li>
+                <li>メディア・取材のお問い合わせ</li>
+                <li>その他のご相談</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="contact-form-wrapper">
+            <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact/thanks">
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="hidden">
+                <label>Don't fill this out: <input name="bot-field" /></label>
+              </p>
+              
+              <div class="form-group">
+                <label for="name">お名前 <span class="required">*</span></label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required
+                  placeholder="山田 太郎"
+                />
+              </div>
+              
+              <div class="form-group">
+                <label for="email">メールアドレス <span class="required">*</span></label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required
+                  placeholder="example@email.com"
+                />
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">件名 <span class="required">*</span></label>
+                <select id="subject" name="subject" required>
+                  <option value="">選択してください</option>
+                  <option value="product">プロダクトに関するご質問</option>
+                  <option value="support">技術的なサポート</option>
+                  <option value="partnership">パートナーシップのご相談</option>
+                  <option value="media">メディア・取材のお問い合わせ</option>
+                  <option value="other">その他</option>
+                </select>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">メッセージ <span class="required">*</span></label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="6" 
+                  required
+                  placeholder="お問い合わせ内容をご記入ください"
+                ></textarea>
+              </div>
+              
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-full">
+                  送信する
+                </button>
+              </div>
+              
+              <p class="form-note">
+                ※ お問い合わせいただいた内容は、プライバシーポリシーに基づき適切に管理いたします。
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Alternative Contact -->
+    <section class="section alt-contact">
+      <div class="container">
+        <div class="alt-contact-content">
+          <h2>Run Diaryについてのお問い合わせ</h2>
+          <p>
+            Run Diaryに関する技術的なご質問やフィードバックは、
+            アプリ内のサポート機能またはメールからご連絡いただけます。
+          </p>
+          <a href="/products/run-diary" class="btn btn-secondary">
+            Run Diaryについて詳しく見る
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+  }
+  
+  /* Contact */
+  .contact {
+    background-color: var(--color-bg);
+  }
+  
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+  }
+  
+  .contact-info h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .info-description {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .method {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .method-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .method-content h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .method-content a {
+    color: var(--color-primary);
+  }
+  
+  .inquiry-types {
+    background-color: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+  }
+  
+  .inquiry-types h3 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .inquiry-types ul {
+    list-style: none;
+  }
+  
+  .inquiry-types li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+  }
+  
+  .inquiry-types li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+  }
+  
+  /* Form */
+  .contact-form-wrapper {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    font-size: 0.9375rem;
+  }
+  
+  .required {
+    color: #EF4444;
+  }
+  
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--color-text-lighter);
+  }
+  
+  .form-group select {
+    cursor: pointer;
+  }
+  
+  .form-group textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+  
+  .btn-full {
+    width: 100%;
+  }
+  
+  .form-note {
+    font-size: 0.8125rem;
+    color: var(--color-text-lighter);
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+  
+  /* Alt Contact */
+  .alt-contact {
+    background-color: var(--color-bg-alt);
+  }
+  
+  .alt-contact-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .alt-contact h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .alt-contact p {
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+</style>

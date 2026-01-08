@@ -1,0 +1,631 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const features = [
+  {
+    icon: '🤖',
+    title: 'AIランニングコーチ',
+    description: 'Google Gemini AIを搭載。あなたのトレーニングデータを分析し、パーソナライズされたアドバイスを提供します。質問に答え、モチベーションを維持するお手伝いをします。',
+  },
+  {
+    icon: '📸',
+    title: 'スクリーンショット自動取り込み',
+    description: 'ランニングアプリのスクリーンショットをアップロードするだけで、距離・タイム・ペースなどを自動認識。面倒な手入力は不要です。',
+  },
+  {
+    icon: '📅',
+    title: '週間トレーニングプラン',
+    description: '目標レースや現在の走力に基づいて、最適な週間トレーニングプランを自動生成。無理なく着実にレベルアップできます。',
+  },
+  {
+    icon: '🎯',
+    title: 'ペーシング戦略',
+    description: '目標タイムに向けた最適なペース配分を提案。前半抑えめ、後半勝負など、レース展開をシミュレーションできます。',
+  },
+  {
+    icon: '⌚',
+    title: 'Garmin/Apple Watch対応',
+    description: 'Garmin ConnectやApple Watchのデータと連携。より詳細なトレーニング分析が可能になります。',
+  },
+  {
+    icon: '📊',
+    title: '詳細な統計・分析',
+    description: '月間・年間の走行距離、平均ペースの推移、目標達成率など、あなたの成長を可視化します。',
+  },
+];
+
+const useCases = [
+  {
+    title: 'マラソン完走を目指すランナー',
+    description: '初めてのフルマラソン完走に向けて、無理のないトレーニングプランを提案。レース当日までの不安を解消します。',
+    icon: '🏃‍♂️',
+  },
+  {
+    title: 'サブ4・サブ3.5を目指す中級ランナー',
+    description: '現在のタイムから目標タイムへのギャップを分析し、具体的な改善ポイントとトレーニングメニューを提案します。',
+    icon: '🏅',
+  },
+  {
+    title: '記録を管理したいランナー',
+    description: 'スクリーンショット一枚で簡単記録。過去の走行履歴を振り返り、成長を実感できます。',
+    icon: '📝',
+  },
+];
+
+const techStack = [
+  { name: 'Next.js', description: 'Reactベースのフレームワーク' },
+  { name: 'Firebase', description: 'バックエンド・認証・データベース' },
+  { name: 'Google Gemini AI', description: 'AIコーチ機能' },
+];
+---
+
+<Layout 
+  title="Run Diary - AIコーチ付きランニング日誌" 
+  description="Run DiaryはAIコーチ付きランニング日誌アプリ。スクリーンショットからの自動ログ取り込み、週間トレーニングプラン自動生成、目標レースに向けたペーシング戦略でマラソン完走をサポートします。"
+>
+  <Header currentPath="/products/run-diary" />
+  
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="badge">🏃 ランニングアプリ</span>
+            <h1>Run Diary</h1>
+            <p class="tagline">AIコーチ付きランニング日誌</p>
+            <p class="description">
+              マラソン完走を目指すランナーから、サブ4・サブ3を目指す中級ランナーまで。
+              Google Gemini AIがあなた専属のランニングコーチとして、
+              目標達成までの道のりをサポートします。
+            </p>
+            <div class="hero-buttons">
+              <a href="https://run-diary-2026.web.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                今すぐ使う（無料）
+              </a>
+              <a href="#features" class="btn btn-secondary">
+                機能を見る
+              </a>
+            </div>
+          </div>
+          
+          <div class="hero-image">
+            <div class="phone-mockup large">
+              <div class="phone-screen">
+                <div class="screen-header">
+                  <span class="time">9:41</span>
+                </div>
+                <div class="app-ui">
+                  <div class="app-nav">
+                    <span>🏃</span>
+                    <span class="app-title">Run Diary</span>
+                    <span>⚙️</span>
+                  </div>
+                  <div class="run-card">
+                    <div class="run-date">2026年1月8日（水）</div>
+                    <div class="run-stats">
+                      <div class="stat">
+                        <div class="stat-value">10.5</div>
+                        <div class="stat-label">km</div>
+                      </div>
+                      <div class="stat">
+                        <div class="stat-value">52:30</div>
+                        <div class="stat-label">時間</div>
+                      </div>
+                      <div class="stat">
+                        <div class="stat-value">5:00</div>
+                        <div class="stat-label">/km</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ai-chat">
+                    <div class="ai-avatar">🤖</div>
+                    <div class="ai-message">
+                      <p>素晴らしい走りでした！ペース5:00/kmは目標通りです。次回は少しペースを上げて、4:50/kmにチャレンジしてみましょう。</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Features -->
+    <section id="features" class="section features">
+      <div class="container">
+        <div class="section-title">
+          <h2>機能</h2>
+          <p>Run Diaryがあなたのランニングをサポートする機能</p>
+        </div>
+        
+        <div class="features-grid">
+          {features.map(feature => (
+            <div class="feature-card">
+              <div class="feature-icon">{feature.icon}</div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Use Cases -->
+    <section class="section use-cases">
+      <div class="container">
+        <div class="section-title">
+          <h2>こんな方におすすめ</h2>
+          <p>Run Diaryはさまざまなランナーの目標達成をサポートします</p>
+        </div>
+        
+        <div class="use-cases-grid">
+          {useCases.map(useCase => (
+            <div class="use-case-card">
+              <div class="use-case-icon">{useCase.icon}</div>
+              <h3>{useCase.title}</h3>
+              <p>{useCase.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section class="section how-it-works">
+      <div class="container">
+        <div class="section-title">
+          <h2>使い方</h2>
+          <p>3ステップで簡単スタート</p>
+        </div>
+        
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>アカウント作成</h3>
+            <p>Googleアカウントで簡単登録。すぐに使い始められます。</p>
+          </div>
+          
+          <div class="step-arrow">→</div>
+          
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>走行記録を追加</h3>
+            <p>スクリーンショットをアップロード、または手動で入力。AIが自動でデータを読み取ります。</p>
+          </div>
+          
+          <div class="step-arrow">→</div>
+          
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>AIコーチに相談</h3>
+            <p>トレーニングの悩み、ペース配分、食事など何でも相談。パーソナライズされたアドバイスが得られます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tech Stack -->
+    <section class="section tech">
+      <div class="container">
+        <div class="section-title">
+          <h2>技術スタック</h2>
+          <p>最新のテクノロジーで構築</p>
+        </div>
+        
+        <div class="tech-grid">
+          {techStack.map(tech => (
+            <div class="tech-card">
+              <h4>{tech.name}</h4>
+              <p>{tech.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>今すぐRun Diaryを始めよう</h2>
+          <p>無料でアカウントを作成し、AIコーチと一緒にトレーニングを始めましょう。</p>
+          <a href="https://run-diary-2026.web.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            無料で始める →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 4rem 0 6rem;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+  }
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    color: var(--color-text-light);
+    margin-bottom: 1.5rem;
+  }
+  
+  .description {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Phone Mockup */
+  .hero-image {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .phone-mockup.large {
+    width: 320px;
+    height: 640px;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 44px;
+    padding: 12px;
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: #0f172a;
+    border-radius: 32px;
+    overflow: hidden;
+  }
+  
+  .screen-header {
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+  }
+  
+  .time {
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+  
+  .app-ui {
+    padding: 0 1rem 1rem;
+  }
+  
+  .app-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    color: white;
+  }
+  
+  .app-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .run-card {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .run-date {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+  }
+  
+  .run-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .ai-chat {
+    display: flex;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: 1rem;
+  }
+  
+  .ai-avatar {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .ai-message p {
+    color: white;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 960px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+    }
+    
+    .hero-buttons {
+      justify-content: center;
+    }
+    
+    .hero-image {
+      order: -1;
+    }
+    
+    .phone-mockup.large {
+      width: 280px;
+      height: 560px;
+    }
+  }
+  
+  /* Features */
+  .features {
+    background-color: var(--color-bg);
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    background-color: var(--color-bg-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h3 {
+    margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+  }
+  
+  .feature-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+  
+  @media (max-width: 960px) {
+    .features-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .features-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Use Cases */
+  .use-cases {
+    background-color: var(--color-bg-alt);
+  }
+  
+  .use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .use-case-card {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  .use-case-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .use-case-card h3 {
+    margin-bottom: 1rem;
+  }
+  
+  .use-case-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+  
+  @media (max-width: 768px) {
+    .use-cases-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* How It Works */
+  .how-it-works {
+    background-color: var(--color-bg);
+  }
+  
+  .steps {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  .step {
+    flex: 1;
+    max-width: 280px;
+    text-align: center;
+  }
+  
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-primary);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 700;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+  }
+  
+  .step h3 {
+    margin-bottom: 0.75rem;
+  }
+  
+  .step p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+  
+  .step-arrow {
+    font-size: 2rem;
+    color: var(--color-text-lighter);
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .steps {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .step-arrow {
+      transform: rotate(90deg);
+    }
+  }
+  
+  /* Tech */
+  .tech {
+    background-color: var(--color-bg-alt);
+  }
+  
+  .tech-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .tech-card {
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 1.5rem 2rem;
+    text-align: center;
+    min-width: 200px;
+  }
+  
+  .tech-card h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .tech-card p {
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+  }
+  
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+  }
+  
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cta h2 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .cta p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+  
+  .cta .btn-primary {
+    background-color: white;
+    color: var(--color-primary);
+  }
+  
+  .cta .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+</style>

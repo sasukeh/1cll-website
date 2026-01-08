@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1F2937"/>
+      <stop offset="100%" style="stop-color:#111827"/>
+    </linearGradient>
+    <linearGradient id="text-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#10B981"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-gradient)"/>
+  
+  <!-- Decorative circles -->
+  <circle cx="1100" cy="100" r="200" fill="#3B82F6" opacity="0.1"/>
+  <circle cx="100" cy="530" r="150" fill="#10B981" opacity="0.1"/>
+  
+  <!-- Logo -->
+  <rect x="100" y="200" width="80" height="80" rx="16" fill="url(#text-gradient)"/>
+  <text x="140" y="255" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="white" text-anchor="middle">CL</text>
+  
+  <!-- Company Name -->
+  <text x="200" y="260" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white">Creative Life Labo</text>
+  
+  <!-- Tagline -->
+  <text x="100" y="340" font-family="Arial, sans-serif" font-size="32" fill="#9CA3AF">テクノロジーで、ライフスタイルを向上</text>
+  
+  <!-- URL -->
+  <text x="100" y="530" font-family="Arial, sans-serif" font-size="24" fill="#6B7280">1cll.com</text>
+</svg>
