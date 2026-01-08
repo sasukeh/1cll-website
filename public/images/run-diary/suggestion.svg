@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812" width="375" height="812">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#f3f4f6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="375" height="812" fill="url(#bg)"/>
+  
+  <!-- Status Bar -->
+  <text x="20" y="30" font-family="Arial" font-size="14" fill="#1f2937">🏃 ランニング日誌</text>
+  <text x="100" y="30" font-family="Arial" font-size="12" fill="#6b7280">1月8日（木）</text>
+  
+  <!-- Title -->
+  <text x="20" y="75" font-family="Arial" font-size="18" font-weight="bold" fill="#1f2937">今日の提案（1月8日）</text>
+  <text x="320" y="75" font-family="Arial" font-size="14" fill="#3b82f6">再生成</text>
+  
+  <!-- Suggestion Card A -->
+  <rect x="20" y="95" width="335" height="240" rx="12" fill="#dcfce7" stroke="#86efac"/>
+  <circle cx="50" cy="125" r="18" fill="#bbf7d0"/>
+  <text x="50" y="131" font-family="Arial" font-size="16" fill="#16a34a" text-anchor="middle">⚡</text>
+  <rect x="80" y="112" width="40" height="22" rx="11" fill="#fef3c7"/>
+  <text x="100" y="127" font-family="Arial" font-size="10" fill="#f59e0b" text-anchor="middle">攻め</text>
+  <text x="325" y="127" font-family="Arial" font-size="16" fill="#6b7280">A</text>
+  
+  <text x="40" y="160" font-family="Arial" font-size="16" font-weight="bold" fill="#1f2937">アクティブリカバリー＋軽い刺激入れ</text>
+  
+  <text x="40" y="190" font-family="Arial" font-size="12" fill="#374151">目的: 血流を促進して疲労物質を流しつつ、レースに</text>
+  <text x="40" y="210" font-family="Arial" font-size="12" fill="#374151">向けて神経系に軽い刺激を入れる</text>
+  
+  <rect x="35" y="225" width="305" height="60" rx="6" fill="rgba(255,255,255,0.5)"/>
+  <text x="45" y="245" font-family="Arial" font-size="11" fill="#6b7280">根拠: 1/7のテンポ走の疲労がありますが、1/11のレースに</text>
+  <text x="45" y="262" font-family="Arial" font-size="11" fill="#6b7280">向けて完全に動きを止めすぎないプランです。ただし、現</text>
+  <text x="45" y="279" font-family="Arial" font-size="11" fill="#6b7280">在のBody Batteryが15と非常に低いため...</text>
+  
+  <text x="40" y="310" font-family="Arial" font-size="11" fill="#f59e0b">⚠️ ジョグは必ず6:30/kmより遅いペースを厳守してください</text>
+  
+  <!-- Suggestion Card B -->
+  <rect x="20" y="355" width="335" height="140" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+  <circle cx="50" cy="385" r="18" fill="#e5e7eb"/>
+  <text x="50" y="391" font-family="Arial" font-size="16" fill="#6b7280" text-anchor="middle">🎯</text>
+  <rect x="80" y="372" width="40" height="22" rx="11" fill="#e5e7eb"/>
+  <text x="100" y="387" font-family="Arial" font-size="10" fill="#6b7280" text-anchor="middle">標準</text>
+  <text x="325" y="387" font-family="Arial" font-size="16" fill="#6b7280">B</text>
+  
+  <text x="40" y="420" font-family="Arial" font-size="16" font-weight="bold" fill="#1f2937">標準リカバリージョグ（30分以内）</text>
+  
+  <text x="40" y="455" font-family="Arial" font-size="12" fill="#374151">目的: 低強度有酸素運動の不足を補い、疲労回復を最</text>
+  <text x="40" y="475" font-family="Arial" font-size="12" fill="#374151">優先する</text>
+</svg>

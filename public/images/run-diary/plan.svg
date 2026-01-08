@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 375 812" width="375" height="812">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff"/>
+      <stop offset="100%" style="stop-color:#f3f4f6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="375" height="812" fill="url(#bg)"/>
+  
+  <!-- Status Bar -->
+  <text x="20" y="30" font-family="Arial" font-size="14" fill="#1f2937">🏃 ランニング日誌</text>
+  <text x="100" y="30" font-family="Arial" font-size="12" fill="#6b7280">1月8日（木）</text>
+  
+  <!-- Title -->
+  <text x="20" y="75" font-family="Arial" font-size="18" font-weight="bold" fill="#1f2937">10日間プラン</text>
+  <text x="280" y="75" font-family="Arial" font-size="13" fill="#6b7280">1/7 〜 1/16</text>
+  
+  <!-- Buttons -->
+  <rect x="20" y="95" width="160" height="44" rx="8" fill="#ffffff" stroke="#e5e7eb"/>
+  <text x="100" y="122" font-family="Arial" font-size="14" fill="#1f2937" text-anchor="middle">🚩 レース登録</text>
+  
+  <rect x="195" y="95" width="160" height="44" rx="8" fill="#3b82f6"/>
+  <text x="275" y="122" font-family="Arial" font-size="14" fill="#ffffff" text-anchor="middle">プラン再生成</text>
+  
+  <!-- Race Card -->
+  <rect x="20" y="160" width="335" height="100" rx="12" fill="#dbeafe" stroke="#93c5fd"/>
+  <text x="40" y="185" font-family="Arial" font-size="11" fill="#3b82f6">🎯 目標レース</text>
+  <rect x="110" y="170" width="60" height="20" rx="10" fill="#dcfce7"/>
+  <text x="140" y="184" font-family="Arial" font-size="9" fill="#16a34a" text-anchor="middle">✅ 分析済み</text>
+  
+  <text x="40" y="215" font-family="Arial" font-size="12" fill="#1f2937">🚩</text>
+  <text x="60" y="215" font-family="Arial" font-size="16" font-weight="bold" fill="#1f2937">ハイテクハーフマラソン</text>
+  <text x="310" y="200" font-family="Arial" font-size="28" font-weight="bold" fill="#3b82f6">2</text>
+  <text x="40" y="240" font-family="Arial" font-size="12" fill="#6b7280">2026年1月11日（日）（ハーフ）目標: 1:25:00</text>
+  <text x="300" y="230" font-family="Arial" font-size="12" fill="#6b7280">日後</text>
+  
+  <!-- Training Entry -->
+  <rect x="20" y="280" width="335" height="200" rx="12" fill="#fef3c7" stroke="#fcd34d"/>
+  <text x="40" y="305" font-family="Arial" font-size="12" fill="#6b7280">水</text>
+  <text x="40" y="330" font-family="Arial" font-size="24" font-weight="bold" fill="#1f2937">7</text>
+  <rect x="70" y="300" width="50" height="22" rx="11" fill="#dcfce7"/>
+  <text x="95" y="315" font-family="Arial" font-size="10" fill="#16a34a" text-anchor="middle">✅ 実績</text>
+  
+  <text x="70" y="355" font-family="Arial" font-size="12" fill="#1f2937" font-weight="500">2026年1月7日夕方に行われた台東区周辺での約</text>
+  <text x="70" y="375" font-family="Arial" font-size="12" fill="#1f2937" font-weight="500">6.5kmのランニング記録です。平均ペース</text>
+  <text x="70" y="395" font-family="Arial" font-size="12" fill="#1f2937" font-weight="500">5:21/kmで、強度は高強度有酸素の「テンポ」に</text>
+  <text x="70" y="415" font-family="Arial" font-size="12" fill="#1f2937" font-weight="500">分類されます。ラップデータを見ると、1kmご</text>
+  <text x="70" y="435" font-family="Arial" font-size="12" fill="#1f2937" font-weight="500">とのペースが後半にかけて5:26から5:16まで上</text>
+  <text x="70" y="455" font-family="Arial" font-size="12" fill="#1f2937" font-weight="500">がっており、理想的なビルドアップ気味の構成</text>
+  <text x="70" y="475" font-family="Arial" font-size="12" fill="#1f2937" font-weight="500">となっています。</text>
+</svg>

@@ -154,6 +154,50 @@ const techStack = [
       </div>
     </section>
     
+    <!-- Screenshots Gallery -->
+    <section class="section screenshots">
+      <div class="container">
+        <div class="section-title">
+          <h2>アプリ画面</h2>
+          <p>実際のアプリ画面をご覧ください</p>
+        </div>
+        
+        <div class="screenshots-grid">
+          <div class="screenshot-item">
+            <div class="screenshot-frame">
+              <img src="/images/run-diary/coach.svg" alt="AIコーチ相談画面" loading="lazy" />
+            </div>
+            <h4>AIコーチに相談</h4>
+            <p>過去のログを踏まえて、振り返りや計画の相談ができます</p>
+          </div>
+          
+          <div class="screenshot-item">
+            <div class="screenshot-frame">
+              <img src="/images/run-diary/history.svg" alt="トレーニング実績画面" loading="lazy" />
+            </div>
+            <h4>トレーニング実績</h4>
+            <p>ワークアウト・リカバリー・バイタルデータを一覧表示</p>
+          </div>
+          
+          <div class="screenshot-item">
+            <div class="screenshot-frame">
+              <img src="/images/run-diary/plan.svg" alt="トレーニングプラン画面" loading="lazy" />
+            </div>
+            <h4>トレーニングプラン</h4>
+            <p>目標レースに向けた10日間プランを自動生成</p>
+          </div>
+          
+          <div class="screenshot-item">
+            <div class="screenshot-frame">
+              <img src="/images/run-diary/suggestion.svg" alt="今日の提案画面" loading="lazy" />
+            </div>
+            <h4>今日の提案</h4>
+            <p>コンディションに合わせた最適なトレーニングを提案</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- Use Cases -->
     <section class="section use-cases">
       <div class="container">
@@ -470,6 +514,62 @@ const techStack = [
   @media (max-width: 600px) {
     .features-grid {
       grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Screenshots Gallery */
+  .screenshots {
+    background-color: var(--color-bg);
+  }
+  
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .screenshot-item {
+    text-align: center;
+  }
+  
+  .screenshot-frame {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    border-radius: 24px;
+    padding: 8px;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+  }
+  
+  .screenshot-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    display: block;
+  }
+  
+  .screenshot-item h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .screenshot-item p {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    line-height: 1.5;
+  }
+  
+  @media (max-width: 960px) {
+    .screenshots-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .screenshots-grid {
+      grid-template-columns: 1fr;
+      max-width: 300px;
+      margin: 0 auto;
     }
   }
   
