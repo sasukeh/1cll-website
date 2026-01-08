@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const lastUpdated = '2026年1月8日';
+const lastUpdated = '2026年1月9日';
 ---
 
 <Layout 
@@ -36,6 +36,25 @@ const lastUpdated = '2026年1月8日';
               <p>
                 本サービスをご利用いただくことで、本プライバシーポリシーに同意いただいたものとみなします。
               </p>
+              
+              <h3>1.1 データ管理者</h3>
+              <p>
+                Creative Life Laboは、お客様の個人データの管理責任者です。
+                プライバシーに関するお問い合わせは、以下までご連絡ください：
+              </p>
+              <ul>
+                <li>メール: <a href="mailto:hello@1cll.com">hello@1cll.com</a></li>
+                <li>ウェブサイト: <a href="https://www.1cll.com">https://www.1cll.com</a></li>
+              </ul>
+              
+              <h3>1.2 データ処理の法的根拠（GDPR対応）</h3>
+              <p>欧州経済領域（EEA）にご在住の場合、以下の法的根拠に基づいてお客様の個人データを処理します：</p>
+              <ul>
+                <li><strong>同意：</strong>データ処理に明示的に同意いただいた場合（例：Garmin Connectの連携）</li>
+                <li><strong>契約の履行：</strong>お客様がリクエストされたサービスを提供するため</li>
+                <li><strong>正当な利益：</strong>サービスの改善、セキュリティの確保、不正防止のため</li>
+                <li><strong>法的義務：</strong>適用法令を遵守するため</li>
+              </ul>
             </section>
             
             <section class="policy-section">
@@ -62,6 +81,62 @@ const lastUpdated = '2026年1月8日';
               <ul>
                 <li>ソーシャルログイン（Google等）を通じた認証情報</li>
                 <li>連携サービス（Garmin Connect、Apple Health等）からのデータ</li>
+              </ul>
+            </section>
+            
+            <section class="policy-section">
+              <h2>2A. Garmin Connectデータ連携について</h2>
+              <p>
+                Garmin ConnectアカウントをRun Diaryに連携いただく場合、AIによるパーソナライズドコーチングを
+                提供するために特定のデータにアクセスします。本セクションでは、アクセスするデータ、
+                その利用方法、および保護方法について説明します。
+              </p>
+              
+              <h3>2A.1 Garmin Connectからアクセスするデータ</h3>
+              <p>お客様の明示的な承認のもと、Run Diaryは以下のGarmin Connectデータへのアクセスを要求します：</p>
+              <ul>
+                <li><strong>アクティビティ：</strong>距離、時間、ペース、心拍数、ケイデンス、GPSデータを含むランニングワークアウト</li>
+                <li><strong>睡眠データ：</strong>睡眠時間、睡眠ステージ、睡眠品質スコア</li>
+                <li><strong>心拍変動（HRV）：</strong>日々のHRV測定値およびストレスレベル</li>
+                <li><strong>VO2 Max推定値：</strong>Garminが算出したフィットネスレベル推定値</li>
+                <li><strong>トレーニング負荷：</strong>急性および慢性のトレーニング負荷指標</li>
+                <li><strong>Body Battery / レディネス：</strong>日々のエネルギーレベル測定値</li>
+              </ul>
+              
+              <h3>2A.2 Garminデータの利用目的</h3>
+              <p>Garmin Connectデータは、Run Diary内で以下のサービスを提供するためにのみ使用します：</p>
+              <ul>
+                <li><strong>AIトレーニング提案：</strong>直近のワークアウト、睡眠、回復指標を分析し、適切な日々のトレーニング（攻め/標準/回復オプション）を推奨</li>
+                <li><strong>動的ペースゾーン計算：</strong>直近のワークアウトデータを使用して、現在のフィットネスレベルを反映したパーソナライズされたペースゾーンを継続的に再計算</li>
+                <li><strong>レースペーシング戦略：</strong>トレーニング履歴とVO2 Max推定値に基づいて、現実的なフィニッシュタイムを予測し、スプリット戦略を生成</li>
+                <li><strong>コンテキスト認識型AIコーチング：</strong>疲労、回復、トレーニング計画についての質問に回答する際に、AIコーチが実際のトレーニングデータを参照可能に</li>
+              </ul>
+              
+              <h3>2A.3 Garminデータの保管と保持</h3>
+              <ul>
+                <li>GarminデータはFirebase上に安全に保管され、保存時に暗号化されます</li>
+                <li>サービス提供に必要なデータのみを保持します</li>
+                <li>過去のアクティビティデータはアカウントが有効な期間保持されます</li>
+                <li>いつでもすべてのGarminソースデータの削除をリクエストできます</li>
+              </ul>
+              
+              <h3>2A.4 Garminデータの共有</h3>
+              <ul>
+                <li>Garminデータは第三者に<strong>販売されることはありません</strong></li>
+                <li>Garminデータは、パーソナライズされたコーチング応答を生成するためにGoogle Gemini AIによってのみ処理されます</li>
+                <li>Garminデータは広告主やマーケティングプラットフォームと共有されません</li>
+                <li>集約された匿名統計は、サービス改善のために使用される場合があります</li>
+              </ul>
+              
+              <h3>2A.5 Garminアクセスの取り消し</h3>
+              <p>
+                Run Diaryの設定からいつでもGarmin Connectアカウントの連携を解除できます。
+                連携解除時：
+              </p>
+              <ul>
+                <li>Garmin Connectからの新しいデータの同期を即時停止します</li>
+                <li>以前に同期されたデータは、削除をリクエストするまで保持されます</li>
+                <li><a href="mailto:hello@1cll.com">hello@1cll.com</a>にご連絡いただくことで、すべてのGarminソースデータの完全な削除をリクエストできます</li>
               </ul>
             </section>
             
@@ -119,15 +194,26 @@ const lastUpdated = '2026年1月8日';
             
             <section class="policy-section">
               <h2>7. お客様の権利</h2>
-              <p>お客様は、以下の権利を有しています：</p>
+              <p>お住まいの地域（特に欧州経済領域の場合）により、個人データに関して以下の権利を有しています：</p>
               <ul>
-                <li>個人情報へのアクセス・訂正の請求</li>
-                <li>個人情報の削除の請求</li>
-                <li>個人情報の利用停止の請求</li>
-                <li>個人情報の第三者提供の停止の請求</li>
+                <li><strong>アクセス権：</strong>当社が保有するお客様の個人データのコピーを請求する権利</li>
+                <li><strong>訂正権：</strong>不正確または不完全なデータの訂正を請求する権利</li>
+                <li><strong>削除権（「忘れられる権利」）：</strong>個人データの削除を請求する権利</li>
+                <li><strong>データポータビリティ権：</strong>データを構造化された機械可読形式で受け取る権利</li>
+                <li><strong>処理制限権：</strong>データの利用方法の制限を請求する権利</li>
+                <li><strong>異議申立権：</strong>正当な利益に基づく処理に対して異議を申し立てる権利</li>
+                <li><strong>同意撤回権：</strong>いつでも同意を撤回する権利（撤回前の処理の適法性には影響しません）</li>
               </ul>
               <p>
-                これらの権利行使をご希望の場合は、<a href="/contact">お問い合わせフォーム</a>よりご連絡ください。
+                これらの権利行使をご希望の場合は、<a href="mailto:hello@1cll.com">hello@1cll.com</a>までご連絡ください。
+                30日以内に対応いたします。
+              </p>
+              
+              <h3>7.1 監督機関への苦情申立権</h3>
+              <p>
+                データ保護に関する権利が侵害されたと思われる場合、監督機関に苦情を申し立てる権利があります。
+                EEAにご在住の場合は、お住まいの国のデータ保護機関にご連絡いただけます。
+                日本にご在住の場合は、個人情報保護委員会にご連絡いただけます。
               </p>
             </section>
             
@@ -160,15 +246,49 @@ const lastUpdated = '2026年1月8日';
             </section>
             
             <section class="policy-section">
-              <h2>11. お問い合わせ</h2>
+              <h2>11. 国際データ転送</h2>
               <p>
-                本プライバシーポリシーに関するご質問やお問い合わせは、
-                以下の方法でご連絡ください：
+                お客様の個人データは、お住まいの国以外の国（日本および米国を含む）に
+                転送・処理される場合があります。これは、当社のサービスプロバイダー
+                （Google Cloud、Firebase等）が運営されている地域を含みます。
+              </p>
+              <p>EEAからのデータ転送については、以下に基づいています：</p>
+              <ul>
+                <li>欧州委員会による十分性認定（例：日本）</li>
+                <li>欧州委員会承認の標準契約条項（SCC）</li>
+                <li>サービスプロバイダーの認定フレームワークへの参加</li>
+              </ul>
+            </section>
+            
+            <section class="policy-section">
+              <h2>12. 自動意思決定およびAI処理</h2>
+              <p>
+                Run Diaryは、パーソナライズされたトレーニング推奨を提供するために
+                AI（Google Gemini）を使用しています。これはお客様のデータの自動処理に該当しますが：
+              </p>
+              <ul>
+                <li>AIの推奨は<strong>提案のみ</strong>であり、拘束力のある決定ではありません</li>
+                <li>AIが生成したアドバイスに従うか無視するかはお客様の自由です</li>
+                <li>法的権利に影響する重要な決定が自動化手段のみで行われることはありません</li>
+                <li>お問い合わせいただくことで、AI生成の推奨について人によるレビューをリクエストできます</li>
+              </ul>
+            </section>
+            
+            <section class="policy-section">
+              <h2>13. お問い合わせ</h2>
+              <p>
+                本プライバシーポリシーに関するご質問、またはデータ保護に関する権利の行使を
+                ご希望の場合は、以下の方法でご連絡ください：
               </p>
               <ul>
                 <li>メール: <a href="mailto:hello@1cll.com">hello@1cll.com</a></li>
                 <li>お問い合わせフォーム: <a href="/contact">/contact</a></li>
               </ul>
+              <p>
+                すべての正当なリクエストにつ30日以内に対応いたします。
+                リクエストが特に複雑な場合は、さらに30日間の延長が必要になる場合があり、
+                その際は事前にご連絡いたします。
+              </p>
             </section>
           </article>
         </div>

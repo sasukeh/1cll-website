@@ -15,7 +15,7 @@ import Footer from '../../components/Footer.astro';
     <section class="hero">
       <div class="container">
         <h1>Privacy Policy</h1>
-        <p class="subtitle">Last updated: January 2026</p>
+        <p class="subtitle">Last updated: January 9, 2026</p>
       </div>
     </section>
     
@@ -29,6 +29,25 @@ import Footer from '../../components/Footer.astro';
               This Privacy Policy explains how we collect, use, disclose, and safeguard your information
               when you use our services, including the Run Diary application.
             </p>
+            
+            <h3>1.1 Data Controller</h3>
+            <p>
+              Creative Life Labo is the data controller responsible for your personal data.
+              For any privacy-related inquiries, please contact us at:
+            </p>
+            <ul>
+              <li>Email: <a href="mailto:hello@1cll.com">hello@1cll.com</a></li>
+              <li>Website: <a href="https://www.1cll.com">https://www.1cll.com</a></li>
+            </ul>
+            
+            <h3>1.2 Legal Basis for Processing (GDPR)</h3>
+            <p>If you are located in the European Economic Area (EEA), we process your personal data based on the following legal grounds:</p>
+            <ul>
+              <li><strong>Consent:</strong> When you explicitly consent to data processing (e.g., connecting Garmin Connect)</li>
+              <li><strong>Contract Performance:</strong> To provide the services you have requested</li>
+              <li><strong>Legitimate Interests:</strong> To improve our services, ensure security, and prevent fraud</li>
+              <li><strong>Legal Obligations:</strong> To comply with applicable laws and regulations</li>
+            </ul>
           </section>
           
           <section class="doc-section">
@@ -54,6 +73,62 @@ import Footer from '../../components/Footer.astro';
               <li>Data from Garmin Connect (if connected)</li>
               <li>Data from Apple Health (if connected)</li>
               <li>Authentication data from Google Sign-In</li>
+            </ul>
+          </section>
+          
+          <section class="doc-section">
+            <h2>2A. Garmin Connect Data Integration</h2>
+            <p>
+              When you choose to connect your Garmin Connect account to Run Diary, 
+              we access specific data to provide personalized AI coaching. This section 
+              explains what data we access, how we use it, and how we protect it.
+            </p>
+            
+            <h3>2A.1 Data We Access from Garmin Connect</h3>
+            <p>With your explicit authorization, Run Diary requests access to the following Garmin Connect data:</p>
+            <ul>
+              <li><strong>Activities:</strong> Running workouts including distance, duration, pace, heart rate, cadence, and GPS data</li>
+              <li><strong>Sleep Data:</strong> Sleep duration, sleep stages, and sleep quality scores</li>
+              <li><strong>Heart Rate Variability (HRV):</strong> Daily HRV measurements and stress levels</li>
+              <li><strong>VO2 Max Estimates:</strong> Fitness level estimates calculated by Garmin</li>
+              <li><strong>Training Load:</strong> Acute and chronic training load metrics</li>
+              <li><strong>Body Battery / Readiness:</strong> Daily energy level measurements</li>
+            </ul>
+            
+            <h3>2A.2 Purpose of Garmin Data Usage</h3>
+            <p>We use Garmin Connect data exclusively to provide the following services within Run Diary:</p>
+            <ul>
+              <li><strong>AI Training Suggestions:</strong> Analyzing your recent workouts, sleep, and recovery metrics to recommend appropriate daily training (aggressive, standard, or recovery options)</li>
+              <li><strong>Dynamic Pace Zone Calculation:</strong> Using your recent workout data to continuously recalibrate personalized pace zones that reflect your current fitness level</li>
+              <li><strong>Race Pacing Strategy:</strong> Predicting realistic finish times and generating split strategies based on your training history and VO2 Max estimates</li>
+              <li><strong>Context-Aware AI Coaching:</strong> Enabling our AI coach to reference your actual training data when answering questions about fatigue, recovery, or training plans</li>
+            </ul>
+            
+            <h3>2A.3 Garmin Data Storage and Retention</h3>
+            <ul>
+              <li>Garmin data is stored securely in Firebase with encryption at rest</li>
+              <li>We retain only the data necessary for providing our services</li>
+              <li>Historical activity data is retained while your account is active</li>
+              <li>You can request deletion of all Garmin-sourced data at any time</li>
+            </ul>
+            
+            <h3>2A.4 Garmin Data Sharing</h3>
+            <ul>
+              <li>Your Garmin data is <strong>never sold</strong> to third parties</li>
+              <li>Garmin data is processed by Google Gemini AI solely to generate personalized coaching responses</li>
+              <li>No Garmin data is shared with advertisers or marketing platforms</li>
+              <li>Aggregated, anonymized statistics may be used for service improvement</li>
+            </ul>
+            
+            <h3>2A.5 Revoking Garmin Access</h3>
+            <p>
+              You can disconnect your Garmin Connect account at any time through Run Diary's settings. 
+              Upon disconnection:
+            </p>
+            <ul>
+              <li>We immediately stop syncing new data from Garmin Connect</li>
+              <li>Previously synced data remains until you request its deletion</li>
+              <li>You can request complete deletion of all Garmin-sourced data by contacting us at <a href="mailto:hello@1cll.com">hello@1cll.com</a></li>
             </ul>
           </section>
           
@@ -90,15 +165,23 @@ import Footer from '../../components/Footer.astro';
           
           <section class="doc-section">
             <h2>6. Your Rights</h2>
-            <p>Depending on your location, you may have the right to:</p>
+            <p>Depending on your location (particularly if you are in the EEA), you have the following rights regarding your personal data:</p>
             <ul>
-              <li>Access your personal data</li>
-              <li>Correct inaccurate data</li>
-              <li>Delete your data</li>
-              <li>Export your data</li>
-              <li>Opt out of certain data processing</li>
+              <li><strong>Right of Access:</strong> Request a copy of the personal data we hold about you</li>
+              <li><strong>Right to Rectification:</strong> Request correction of inaccurate or incomplete data</li>
+              <li><strong>Right to Erasure ("Right to be Forgotten"):</strong> Request deletion of your personal data</li>
+              <li><strong>Right to Data Portability:</strong> Receive your data in a structured, machine-readable format</li>
+              <li><strong>Right to Restrict Processing:</strong> Request limitation of how we use your data</li>
+              <li><strong>Right to Object:</strong> Object to processing based on legitimate interests</li>
+              <li><strong>Right to Withdraw Consent:</strong> Withdraw consent at any time (without affecting the lawfulness of processing before withdrawal)</li>
             </ul>
-            <p>To exercise these rights, please contact us at <a href="mailto:hello@1cll.com">hello@1cll.com</a>.</p>
+            <p>To exercise these rights, please contact us at <a href="mailto:hello@1cll.com">hello@1cll.com</a>. We will respond within 30 days.</p>
+            
+            <h3>6.1 Right to Lodge a Complaint</h3>
+            <p>
+              If you believe your data protection rights have been violated, you have the right to lodge a complaint 
+              with a supervisory authority. For EEA residents, you can contact your local Data Protection Authority.
+            </p>
           </section>
           
           <section class="doc-section">
@@ -118,7 +201,37 @@ import Footer from '../../components/Footer.astro';
           </section>
           
           <section class="doc-section">
-            <h2>9. Changes to This Policy</h2>
+            <h2>9. International Data Transfers</h2>
+            <p>
+              Your personal data may be transferred to and processed in countries outside your country of residence,
+              including Japan and the United States (where our service providers such as Google Cloud and Firebase operate).
+            </p>
+            <p>
+              For transfers from the EEA, we rely on:
+            </p>
+            <ul>
+              <li>Adequacy decisions by the European Commission (e.g., Japan)</li>
+              <li>Standard Contractual Clauses (SCCs) approved by the European Commission</li>
+              <li>Service providers' participation in recognized frameworks</li>
+            </ul>
+          </section>
+          
+          <section class="doc-section">
+            <h2>10. Automated Decision-Making and AI Processing</h2>
+            <p>
+              Run Diary uses AI (Google Gemini) to provide personalized training recommendations. 
+              This constitutes automated processing of your data. However:
+            </p>
+            <ul>
+              <li>AI recommendations are <strong>suggestions only</strong> and do not constitute binding decisions</li>
+              <li>You are free to follow or ignore any AI-generated advice</li>
+              <li>No significant decisions affecting your legal rights are made solely by automated means</li>
+              <li>You can request human review of any AI-generated recommendations by contacting us</li>
+            </ul>
+          </section>
+          
+          <section class="doc-section">
+            <h2>11. Changes to This Policy</h2>
             <p>
               We may update this Privacy Policy from time to time. We will notify you of any changes
               by posting the new Privacy Policy on this page and updating the "Last updated" date.
@@ -126,14 +239,18 @@ import Footer from '../../components/Footer.astro';
           </section>
           
           <section class="doc-section">
-            <h2>10. Contact Us</h2>
+            <h2>12. Contact Us</h2>
             <p>
-              If you have any questions about this Privacy Policy, please contact us:
+              If you have any questions about this Privacy Policy or wish to exercise your data protection rights, please contact us:
             </p>
             <ul>
               <li>Email: <a href="mailto:hello@1cll.com">hello@1cll.com</a></li>
               <li>Website: <a href="https://www.1cll.com">https://www.1cll.com</a></li>
             </ul>
+            <p>
+              We aim to respond to all legitimate requests within 30 days. If your request is particularly complex,
+              we may require an additional 30 days and will notify you accordingly.
+            </p>
           </section>
         </div>
       </div>

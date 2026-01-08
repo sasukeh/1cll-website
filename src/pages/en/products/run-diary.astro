@@ -59,6 +59,29 @@ const techStack = [
   { name: 'Firebase', description: 'Backend, auth & database' },
   { name: 'Google Gemini AI', description: 'AI coach functionality' },
 ];
+
+const garminFeatures = [
+  {
+    icon: '🧠',
+    title: 'AI-Powered Smart Training Suggestions',
+    description: 'Analyzes your Garmin workout history and provides 3 daily training options (aggressive/standard/recovery). Considers training load, sleep, and HRV data from the past 7 days for safe, science-based recommendations.',
+  },
+  {
+    icon: '📊',
+    title: 'Dynamic Pace Zone Adjustment',
+    description: 'Unlike traditional VDOT calculations based on race results, Run Diary continuously recalibrates your pace zones using the last 30 days of Garmin data, ensuring accuracy even months after your last race.',
+  },
+  {
+    icon: '🎯',
+    title: 'Race Pacing Strategy',
+    description: 'Predicts realistic finish times from your training data and generates 5km split strategies. Provides pace adjustment advice based on weather forecasts (temperature, humidity).',
+  },
+  {
+    icon: '💬',
+    title: 'Context-Aware AI Chat',
+    description: 'Unlike generic AI chatbots, Run Diary dynamically references your Garmin data based on your questions. Ask about weekly plans, fatigue levels, or injury concerns—AI retrieves only relevant data for personalized responses.',
+  },
+];
 ---
 
 <Layout 
@@ -215,6 +238,161 @@ const techStack = [
               <p>{useCase.description}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Garmin Connect Integration -->
+    <section id="garmin-integration" class="section garmin-integration">
+      <div class="container">
+        <div class="section-title">
+          <h2>⌚ Garmin Connect Integration</h2>
+          <p>Unlock the full potential of your Garmin data with AI-powered insights</p>
+        </div>
+        
+        <div class="garmin-intro">
+          <p>
+            Run Diary transforms your Garmin wearable data into actionable training intelligence. 
+            While Garmin Connect excels at recording detailed fitness metrics, many runners struggle to 
+            interpret this data and answer the crucial question: "What should I do next?"
+          </p>
+          <p>
+            Run Diary bridges this gap by applying AI analysis to your Garmin data, providing 
+            personalized coaching that adapts to your current fitness state—not just historical race results.
+          </p>
+        </div>
+        
+        <div class="garmin-features-grid">
+          {garminFeatures.map(feature => (
+            <div class="garmin-feature-card">
+              <div class="garmin-feature-icon">{feature.icon}</div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+        
+        <div class="garmin-data-section">
+          <h3>Data We Request from Garmin Connect</h3>
+          <p class="data-intro">Run Diary requests the following data types to provide personalized coaching. All data is processed securely and used solely to enhance your training experience.</p>
+          
+          <div class="data-grid">
+            <div class="data-card">
+              <div class="data-icon">🏃</div>
+              <h4>Activities</h4>
+              <p>Running workouts including distance, duration, pace, heart rate, and cadence to analyze training patterns and progress.</p>
+            </div>
+            <div class="data-card">
+              <div class="data-icon">😴</div>
+              <h4>Sleep Data</h4>
+              <p>Sleep duration and quality metrics to factor recovery status into training recommendations.</p>
+            </div>
+            <div class="data-card">
+              <div class="data-icon">❤️</div>
+              <h4>Heart Rate Variability (HRV)</h4>
+              <p>HRV measurements to assess physiological readiness and prevent overtraining.</p>
+            </div>
+            <div class="data-card">
+              <div class="data-icon">📈</div>
+              <h4>VO2 Max Estimates</h4>
+              <p>Fitness level estimates to dynamically adjust pace zones and race predictions.</p>
+            </div>
+            <div class="data-card">
+              <div class="data-icon">⚡</div>
+              <h4>Training Load</h4>
+              <p>Cumulative training stress to balance workout intensity and recovery periods.</p>
+            </div>
+            <div class="data-card">
+              <div class="data-icon">🔋</div>
+              <h4>Body Battery / Readiness</h4>
+              <p>Daily energy levels to recommend appropriate training intensity.</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="comparison-section">
+          <h3>How Run Diary Complements Garmin Connect</h3>
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>Garmin Connect</th>
+                  <th>Strava</th>
+                  <th>TrainingPeaks</th>
+                  <th>Run Diary</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Data Recording</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅</td>
+                  <td>✅ (via Garmin)</td>
+                </tr>
+                <tr>
+                  <td>AI Training Suggestions</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅ 3 daily options</td>
+                </tr>
+                <tr>
+                  <td>Dynamic Pace Zones</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅ Last 30 days</td>
+                </tr>
+                <tr>
+                  <td>AI Chat Coach</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅ 10 coach personalities</td>
+                </tr>
+                <tr>
+                  <td>Multi-language AI</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>❌</td>
+                  <td>✅ Japanese/English</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        
+        <div class="user-story">
+          <blockquote>
+            "I was recording daily runs with Garmin but always wondered, 'What should I do next?' 
+            Since using Run Diary, I wake up to AI-recommended workouts every morning. 
+            On days when my sleep was poor, recovery workouts are automatically suggested. 
+            I no longer stress about training planning."
+          </blockquote>
+          <cite>— Run Diary User</cite>
+        </div>
+        
+        <div class="garmin-benefits">
+          <h3>Benefits for the Garmin Ecosystem</h3>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🔗</div>
+              <h4>Enhanced Device Value</h4>
+              <p>Run Diary makes Garmin devices more valuable by transforming raw data into actionable insights.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📊</div>
+              <h4>Data Utilization</h4>
+              <p>Collected data is converted into practical advice through AI analysis.</p>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🎯</div>
+              <h4>User Engagement</h4>
+              <p>Daily AI suggestions increase Garmin device usage and retention rates.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -692,6 +870,241 @@ const techStack = [
     background: #f3f4f6;
   }
   
+  /* Garmin Integration Section */
+  .garmin-integration {
+    background: linear-gradient(180deg, #1a1f2e 0%, #0f1419 100%);
+    color: white;
+  }
+  
+  .garmin-integration .section-title h2 {
+    color: white;
+  }
+  
+  .garmin-integration .section-title p {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .garmin-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+  
+  .garmin-intro p {
+    color: rgba(255, 255, 255, 0.85);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+  }
+  
+  .garmin-features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+  
+  .garmin-feature-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: transform var(--transition-fast), background var(--transition-fast);
+  }
+  
+  .garmin-feature-card:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.12);
+  }
+  
+  .garmin-feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .garmin-feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #60a5fa;
+  }
+  
+  .garmin-feature-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+  }
+  
+  .garmin-data-section {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    padding: 3rem;
+    margin-bottom: 4rem;
+  }
+  
+  .garmin-data-section h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  .data-intro {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.7;
+  }
+  
+  .data-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .data-card {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .data-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .data-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #60a5fa;
+  }
+  
+  .data-card p {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+  }
+  
+  .comparison-section {
+    margin-bottom: 4rem;
+  }
+  
+  .comparison-section h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  
+  .comparison-table-wrapper {
+    overflow-x: auto;
+  }
+  
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  
+  .comparison-table th,
+  .comparison-table td {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .comparison-table th {
+    background: rgba(96, 165, 250, 0.2);
+    color: #60a5fa;
+    font-weight: 600;
+  }
+  
+  .comparison-table th:first-child,
+  .comparison-table td:first-child {
+    text-align: left;
+  }
+  
+  .comparison-table td {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .comparison-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  .comparison-table th:last-child,
+  .comparison-table td:last-child {
+    background: rgba(96, 165, 250, 0.1);
+    color: #60a5fa;
+    font-weight: 600;
+  }
+  
+  .user-story {
+    background: rgba(96, 165, 250, 0.15);
+    border-left: 4px solid #60a5fa;
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: 2rem 3rem;
+    margin-bottom: 4rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .user-story blockquote {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0 0 1rem;
+  }
+  
+  .user-story cite {
+    color: #60a5fa;
+    font-style: normal;
+    font-weight: 500;
+  }
+  
+  .garmin-benefits h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: white;
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .benefit-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .benefit-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .benefit-card h4 {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    color: #60a5fa;
+  }
+  
+  .benefit-card p {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+  }
+  
   /* Responsive */
   @media (max-width: 1024px) {
     .features-grid,
@@ -745,6 +1158,26 @@ const techStack = [
     .tech-grid {
       flex-direction: column;
       align-items: center;
+    }
+    
+    .garmin-features-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .data-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .benefits-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .user-story {
+      padding: 1.5rem 2rem;
+    }
+    
+    .garmin-data-section {
+      padding: 2rem;
     }
   }
 </style>
