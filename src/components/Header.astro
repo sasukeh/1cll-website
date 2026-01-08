@@ -1,26 +1,36 @@
 ---
 export interface Props {
   currentPath?: string;
+  lang?: 'ja' | 'en';
 }
 
-const { currentPath = '/' } = Astro.props;
+const { currentPath = '/', lang = 'ja' } = Astro.props;
 
-const navItems = [
+const navItems = lang === 'en' ? [
+  { href: '/en/', label: 'Home' },
+  { href: '/en/products/run-diary', label: 'Products' },
+  { href: '/en/about', label: 'About' },
+  { href: '/en/contact', label: 'Contact' },
+] : [
   { href: '/', label: 'ホーム' },
   { href: '/products/run-diary', label: 'プロダクト' },
   { href: '/about', label: '会社概要' },
   { href: '/contact', label: 'お問い合わせ' },
 ];
+
+const langSwitch = lang === 'en' 
+  ? { href: currentPath.replace('/en', '') || '/', label: '日本語' }
+  : { href: `/en${currentPath}`, label: 'EN' };
 ---
 
 <header class="header">
   <div class="container">
     <nav class="nav">
-      <a href="/" class="logo">
+      <a href={lang === 'en' ? '/en/' : '/'} class="logo">
         <span class="logo-text">Creative Life Labo</span>
       </a>
       
-      <button class="mobile-menu-btn" aria-label="メニュー" aria-expanded="false">
+      <button class="mobile-menu-btn" aria-label={lang === 'en' ? 'Menu' : 'メニュー'} aria-expanded="false">
         <span class="hamburger"></span>
       </button>
       
@@ -35,6 +45,11 @@ const navItems = [
             </a>
           </li>
         ))}
+        <li class="lang-switch">
+          <a href={langSwitch.href} class="nav-link lang-link">
+            🌐 {langSwitch.label}
+          </a>
+        </li>
       </ul>
     </nav>
   </div>
@@ -103,6 +118,16 @@ const navItems = [
   .nav-link:hover::after,
   .nav-link.active::after {
     width: 100%;
+  }
+  
+  .lang-switch {
+    margin-left: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--color-border);
+  }
+  
+  .lang-link {
+    font-size: 0.875rem;
   }
   
   .mobile-menu-btn {

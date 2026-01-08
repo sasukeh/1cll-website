@@ -1,0 +1,276 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout 
+  title="About Us" 
+  description="Creative Life Labo is a company developing apps and services to enhance your lifestyle. Learn about our mission, vision, and the team behind our products."
+  lang="en"
+>
+  <Header currentPath="/en/about" lang="en" />
+  
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>About Us</h1>
+        <p class="subtitle">Developing apps and services to enhance your lifestyle</p>
+      </div>
+    </section>
+    
+    <!-- Mission -->
+    <section class="section mission">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-content">
+            <h2>Our Mission</h2>
+            <p class="lead">
+              To empower people to pursue a better life through technology.
+            </p>
+            <p>
+              Creative Life Labo develops apps and services to enrich your daily life.
+              We leverage the latest technology, especially AI, to provide personalized
+              solutions that help you achieve your goals.
+            </p>
+          </div>
+          
+          <div class="values">
+            <div class="value-card">
+              <div class="value-icon">🎯</div>
+              <h3>User First</h3>
+              <p>We prioritize user experience in all our decisions</p>
+            </div>
+            
+            <div class="value-card">
+              <div class="value-icon">🚀</div>
+              <h3>Innovation</h3>
+              <p>We pursue new value through cutting-edge technology</p>
+            </div>
+            
+            <div class="value-card">
+              <div class="value-icon">💪</div>
+              <h3>Continuous Improvement</h3>
+              <p>We grow and improve every day</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Company Info -->
+    <section class="section company-info">
+      <div class="container">
+        <h2>Company Information</h2>
+        
+        <div class="info-table">
+          <div class="info-row">
+            <div class="info-label">Company Name</div>
+            <div class="info-value">Creative Life Labo</div>
+          </div>
+          
+          <div class="info-row">
+            <div class="info-label">Business</div>
+            <div class="info-value">App and service development for lifestyle enhancement</div>
+          </div>
+          
+          <div class="info-row">
+            <div class="info-label">Products</div>
+            <div class="info-value">Run Diary (AI-Powered Running Journal)</div>
+          </div>
+          
+          <div class="info-row">
+            <div class="info-label">Website</div>
+            <div class="info-value"><a href="https://1cll.com">https://1cll.com</a></div>
+          </div>
+          
+          <div class="info-row">
+            <div class="info-label">Contact</div>
+            <div class="info-value"><a href="mailto:contact@1cll.com">contact@1cll.com</a></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Get in Touch</h2>
+          <p>
+            If you have any questions about our products, partnership inquiries,
+            or other matters, please feel free to contact us.
+          </p>
+          <a href="/en/contact" class="btn btn-primary">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+  }
+  
+  /* Mission */
+  .mission {
+    background-color: var(--color-bg);
+  }
+  
+  .mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+  
+  .mission-content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .mission-content p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+  }
+  
+  .values {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .value-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+  }
+  
+  .value-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .value-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .value-card p {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+  }
+  
+  /* Company Info */
+  .company-info {
+    background-color: var(--color-bg-alt);
+  }
+  
+  .company-info h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .info-table {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  
+  .info-row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .info-row:last-child {
+    border-bottom: none;
+  }
+  
+  .info-label {
+    padding: 1rem 1.5rem;
+    background: var(--color-bg-alt);
+    font-weight: 500;
+    font-size: 0.875rem;
+  }
+  
+  .info-value {
+    padding: 1rem 1.5rem;
+    color: var(--color-text-light);
+  }
+  
+  .info-value a {
+    color: var(--color-primary);
+  }
+  
+  /* CTA */
+  .cta {
+    background: var(--color-bg);
+  }
+  
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .mission-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .info-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .info-label {
+      border-bottom: 1px solid var(--color-border);
+    }
+  }
+</style>

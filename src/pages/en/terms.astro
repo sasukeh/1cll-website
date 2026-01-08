@@ -1,0 +1,213 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout 
+  title="Terms of Service" 
+  description="Creative Life Labo Terms of Service. Please read these terms carefully before using our services."
+  lang="en"
+>
+  <Header currentPath="/en/terms" lang="en" />
+  
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Terms of Service</h1>
+        <p class="subtitle">Last updated: January 2026</p>
+      </div>
+    </section>
+    
+    <section class="section content">
+      <div class="container">
+        <div class="document">
+          <section class="doc-section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>
+              By accessing or using the services provided by Creative Life Labo ("we," "our," or "us"),
+              including the Run Diary application, you agree to be bound by these Terms of Service.
+              If you do not agree to these terms, please do not use our services.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>2. Description of Services</h2>
+            <p>
+              Creative Life Labo provides Run Diary, an AI-powered running journal application that includes:
+            </p>
+            <ul>
+              <li>Running log management and tracking</li>
+              <li>AI coaching powered by Google Gemini</li>
+              <li>Automatic data extraction from screenshots</li>
+              <li>Training plan generation</li>
+              <li>Integration with Garmin Connect and other fitness platforms</li>
+            </ul>
+          </section>
+          
+          <section class="doc-section">
+            <h2>3. User Accounts</h2>
+            <h3>3.1 Registration</h3>
+            <p>
+              You may need to create an account to use certain features. You are responsible for
+              maintaining the confidentiality of your account credentials.
+            </p>
+            
+            <h3>3.2 Account Responsibility</h3>
+            <p>
+              You are responsible for all activities that occur under your account.
+              Please notify us immediately of any unauthorized use.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>4. User Content</h2>
+            <p>
+              You retain ownership of content you submit to our services.
+              By submitting content, you grant us a license to use, store, and process it
+              for the purpose of providing our services.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>5. Acceptable Use</h2>
+            <p>You agree not to:</p>
+            <ul>
+              <li>Use the services for any illegal purpose</li>
+              <li>Attempt to gain unauthorized access to our systems</li>
+              <li>Interfere with the proper functioning of the services</li>
+              <li>Upload malicious code or harmful content</li>
+              <li>Violate the rights of others</li>
+            </ul>
+          </section>
+          
+          <section class="doc-section">
+            <h2>6. AI Services Disclaimer</h2>
+            <p>
+              Our AI coaching features are provided for informational purposes only and should not
+              be considered as professional medical, fitness, or health advice.
+              Always consult with qualified professionals before starting any exercise program.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>7. Third-Party Services</h2>
+            <p>
+              Our services may integrate with third-party platforms such as Garmin Connect,
+              Google, and Firebase. Your use of these integrations is subject to the respective
+              third-party terms and privacy policies.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>8. Limitation of Liability</h2>
+            <p>
+              To the maximum extent permitted by law, Creative Life Labo shall not be liable for
+              any indirect, incidental, special, consequential, or punitive damages arising from
+              your use of our services.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>9. Modifications to Service</h2>
+            <p>
+              We reserve the right to modify, suspend, or discontinue any part of our services
+              at any time. We will provide reasonable notice when possible.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>10. Termination</h2>
+            <p>
+              We may terminate or suspend your account at our discretion if you violate these terms.
+              You may also delete your account at any time through the app settings.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>11. Governing Law</h2>
+            <p>
+              These terms shall be governed by and construed in accordance with the laws of Japan.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>12. Contact Information</h2>
+            <p>
+              For questions about these Terms of Service, please contact us:
+            </p>
+            <ul>
+              <li>Email: <a href="mailto:contact@1cll.com">contact@1cll.com</a></li>
+              <li>Website: <a href="https://1cll.com">https://1cll.com</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  .hero {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    color: var(--color-text-light);
+  }
+  
+  .content {
+    background-color: var(--color-bg);
+  }
+  
+  .document {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .doc-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .doc-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .doc-section h3 {
+    font-size: 1.125rem;
+    margin: 1.5rem 0 0.75rem;
+  }
+  
+  .doc-section p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  
+  .doc-section ul {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .doc-section li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .doc-section a {
+    color: var(--color-primary);
+  }
+</style>

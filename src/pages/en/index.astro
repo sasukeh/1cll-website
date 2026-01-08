@@ -1,0 +1,460 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const features = [
+  {
+    icon: '🤖',
+    title: 'AI Coach',
+    description: 'Personalized advice to help you achieve your goals',
+  },
+  {
+    icon: '📸',
+    title: 'Auto Log Import',
+    description: 'Automatically recognize running data from screenshots',
+  },
+  {
+    icon: '📅',
+    title: 'Training Plans',
+    description: 'Auto-generated weekly plans for efficient training',
+  },
+  {
+    icon: '🎯',
+    title: 'Pacing Strategy',
+    description: 'Optimal pace distribution for your goal race',
+  },
+];
+---
+
+<Layout 
+  title="Home" 
+  description="Creative Life Labo - Developing apps and services to enhance your lifestyle. Featuring Run Diary, an AI-powered running journal app."
+  lang="en"
+>
+  <Header currentPath="/en/" lang="en" />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Enhance Your<br />
+            <span class="gradient-text">Lifestyle with Technology</span>
+          </h1>
+          <p class="hero-description">
+            Creative Life Labo develops apps and services to enrich your daily life.
+            We support your goal achievement with smart solutions powered by AI.
+          </p>
+          <div class="hero-buttons">
+            <a href="/en/products/run-diary" class="btn btn-primary">
+              View Products
+            </a>
+            <a href="/en/about" class="btn btn-secondary">
+              About Us
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bg"></div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="section products">
+      <div class="container">
+        <div class="section-title">
+          <h2>Products</h2>
+          <p>Apps and services we've developed</p>
+        </div>
+        
+        <div class="product-card">
+          <div class="product-content">
+            <span class="product-badge">Running App</span>
+            <h3 class="product-title">Run Diary</h3>
+            <p class="product-subtitle">AI-Powered Running Journal</p>
+            <p class="product-description">
+              A running journal app powered by Google Gemini AI.
+              Features include automatic log import from screenshots, auto-generated weekly training plans,
+              and pacing strategies for your goal race. Perfect for runners aiming to complete a marathon
+              or achieve sub-4/sub-3 goals.
+            </p>
+            
+            <div class="product-features">
+              {features.map(feature => (
+                <div class="mini-feature">
+                  <span class="mini-feature-icon">{feature.icon}</span>
+                  <div>
+                    <strong>{feature.title}</strong>
+                    <p>{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <a href="/en/products/run-diary" class="btn btn-primary">
+              Learn More
+            </a>
+          </div>
+          
+          <div class="product-visual">
+            <div class="phone-mockup">
+              <div class="phone-screen">
+                <div class="screen-header">
+                  <span class="time">9:41</span>
+                </div>
+                <div class="app-ui">
+                  <div class="app-nav">
+                    <span>🏃</span>
+                    <span class="app-title">Run Diary</span>
+                    <span>⚙️</span>
+                  </div>
+                  <div class="run-card">
+                    <div class="run-date">Jan 8, 2026 (Wed)</div>
+                    <div class="run-stats">
+                      <div class="stat">
+                        <div class="stat-value">10.5</div>
+                        <div class="stat-label">km</div>
+                      </div>
+                      <div class="stat">
+                        <div class="stat-value">52:30</div>
+                        <div class="stat-label">time</div>
+                      </div>
+                      <div class="stat">
+                        <div class="stat-value">5:00</div>
+                        <div class="stat-label">/km</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ai-chat">
+                    <div class="ai-avatar">🤖</div>
+                    <div class="ai-message">
+                      <p>Great run! Your pace of 5:00/km is right on target. Try pushing to 4:50/km next time!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="section cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Start Your Running Journey</h2>
+          <p>Create a free account and start training with your AI coach.</p>
+          <a href="https://run-diary-2026.web.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            Try Run Diary Free
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    position: relative;
+    padding: 6rem 0;
+    overflow: hidden;
+  }
+  
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+    z-index: -1;
+  }
+  
+  .hero-content {
+    max-width: 640px;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #8B5CF6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-description {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Products */
+  .products {
+    background-color: var(--color-bg-alt);
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .section-title h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-title p {
+    color: var(--color-text-light);
+  }
+  
+  .product-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: 3rem;
+  }
+  
+  .product-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #8B5CF6 100%);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  
+  .product-title {
+    font-size: 2.5rem;
+    margin: 1rem 0 0.5rem;
+  }
+  
+  .product-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-text-light);
+    margin-bottom: 1rem;
+  }
+  
+  .product-description {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  
+  .product-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .mini-feature {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+  
+  .mini-feature-icon {
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+  
+  .mini-feature strong {
+    font-size: 0.875rem;
+    display: block;
+    margin-bottom: 0.25rem;
+  }
+  
+  .mini-feature p {
+    font-size: 0.8125rem;
+    color: var(--color-text-light);
+    line-height: 1.4;
+  }
+  
+  /* Phone Mockup */
+  .product-visual {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .phone-mockup {
+    width: 280px;
+    height: 580px;
+    background: #1a1a1a;
+    border-radius: 40px;
+    padding: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+  
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 30px;
+    overflow: hidden;
+  }
+  
+  .screen-header {
+    background: #f3f4f6;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+  
+  .time {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .app-ui {
+    padding: 1rem;
+  }
+  
+  .app-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .app-title {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .run-card {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 12px;
+    padding: 1rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .run-date {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    margin-bottom: 0.75rem;
+  }
+  
+  .run-stats {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .stat-label {
+    font-size: 0.625rem;
+    opacity: 0.8;
+  }
+  
+  .ai-chat {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .ai-avatar {
+    width: 36px;
+    height: 36px;
+    background: #dbeafe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+  
+  .ai-message {
+    background: #f3f4f6;
+    border-radius: 12px;
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    color: #374151;
+    line-height: 1.5;
+  }
+  
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #8B5CF6 100%);
+    color: white;
+  }
+  
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta p {
+    opacity: 0.9;
+    margin-bottom: 2rem;
+  }
+  
+  .cta .btn-primary {
+    background: white;
+    color: var(--color-primary);
+  }
+  
+  .cta .btn-primary:hover {
+    background: #f3f4f6;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .product-card {
+      grid-template-columns: 1fr;
+      padding: 2rem;
+    }
+    
+    .product-visual {
+      order: -1;
+    }
+    
+    .phone-mockup {
+      width: 240px;
+      height: 500px;
+    }
+    
+    .product-features {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

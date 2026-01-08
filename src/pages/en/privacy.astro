@@ -1,0 +1,207 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+---
+
+<Layout 
+  title="Privacy Policy" 
+  description="Creative Life Labo Privacy Policy. Learn how we collect, use, and protect your personal information."
+  lang="en"
+>
+  <Header currentPath="/en/privacy" lang="en" />
+  
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">Last updated: January 2026</p>
+      </div>
+    </section>
+    
+    <section class="section content">
+      <div class="container">
+        <div class="document">
+          <section class="doc-section">
+            <h2>1. Introduction</h2>
+            <p>
+              Creative Life Labo ("we," "our," or "us") is committed to protecting your privacy.
+              This Privacy Policy explains how we collect, use, disclose, and safeguard your information
+              when you use our services, including the Run Diary application.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>2. Information We Collect</h2>
+            <h3>2.1 Information You Provide</h3>
+            <ul>
+              <li>Account information (email address, name)</li>
+              <li>Running and fitness data you enter or upload</li>
+              <li>Screenshots you upload for automatic data extraction</li>
+              <li>Communications with AI coach</li>
+              <li>Contact form submissions</li>
+            </ul>
+            
+            <h3>2.2 Automatically Collected Information</h3>
+            <ul>
+              <li>Device information (device type, operating system)</li>
+              <li>Usage data (features used, time spent)</li>
+              <li>Log data (IP address, browser type)</li>
+            </ul>
+            
+            <h3>2.3 Third-Party Data</h3>
+            <ul>
+              <li>Data from Garmin Connect (if connected)</li>
+              <li>Data from Apple Health (if connected)</li>
+              <li>Authentication data from Google Sign-In</li>
+            </ul>
+          </section>
+          
+          <section class="doc-section">
+            <h2>3. How We Use Your Information</h2>
+            <ul>
+              <li>To provide and maintain our services</li>
+              <li>To personalize AI coaching and recommendations</li>
+              <li>To generate training plans and pacing strategies</li>
+              <li>To improve our services and develop new features</li>
+              <li>To communicate with you about updates and support</li>
+              <li>To ensure security and prevent fraud</li>
+            </ul>
+          </section>
+          
+          <section class="doc-section">
+            <h2>4. Data Sharing</h2>
+            <p>We do not sell your personal information. We may share your data with:</p>
+            <ul>
+              <li><strong>Service Providers:</strong> Third-party services that help us operate our platform (e.g., Firebase, Google Cloud)</li>
+              <li><strong>AI Services:</strong> Google Gemini AI for processing your queries and providing coaching</li>
+              <li><strong>Legal Requirements:</strong> When required by law or to protect our rights</li>
+            </ul>
+          </section>
+          
+          <section class="doc-section">
+            <h2>5. Data Security</h2>
+            <p>
+              We implement appropriate technical and organizational measures to protect your data,
+              including encryption, secure authentication, and regular security audits.
+              However, no method of transmission over the Internet is 100% secure.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>6. Your Rights</h2>
+            <p>Depending on your location, you may have the right to:</p>
+            <ul>
+              <li>Access your personal data</li>
+              <li>Correct inaccurate data</li>
+              <li>Delete your data</li>
+              <li>Export your data</li>
+              <li>Opt out of certain data processing</li>
+            </ul>
+            <p>To exercise these rights, please contact us at <a href="mailto:contact@1cll.com">contact@1cll.com</a>.</p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>7. Data Retention</h2>
+            <p>
+              We retain your data for as long as your account is active or as needed to provide services.
+              You can request deletion of your account and associated data at any time.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>8. Children's Privacy</h2>
+            <p>
+              Our services are not intended for children under 13. We do not knowingly collect
+              personal information from children under 13.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>9. Changes to This Policy</h2>
+            <p>
+              We may update this Privacy Policy from time to time. We will notify you of any changes
+              by posting the new Privacy Policy on this page and updating the "Last updated" date.
+            </p>
+          </section>
+          
+          <section class="doc-section">
+            <h2>10. Contact Us</h2>
+            <p>
+              If you have any questions about this Privacy Policy, please contact us:
+            </p>
+            <ul>
+              <li>Email: <a href="mailto:contact@1cll.com">contact@1cll.com</a></li>
+              <li>Website: <a href="https://1cll.com">https://1cll.com</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  .hero {
+    padding: 4rem 0;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .subtitle {
+    color: var(--color-text-light);
+  }
+  
+  .content {
+    background-color: var(--color-bg);
+  }
+  
+  .document {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .doc-section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .doc-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  .doc-section h3 {
+    font-size: 1.125rem;
+    margin: 1.5rem 0 0.75rem;
+  }
+  
+  .doc-section p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+  }
+  
+  .doc-section ul {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    padding-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .doc-section li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .doc-section a {
+    color: var(--color-primary);
+  }
+</style>

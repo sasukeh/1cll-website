@@ -1,21 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
 ---
 
 <Layout 
-  title="お問い合わせ" 
-  description="Creative Life Laboへのお問い合わせはこちら。プロダクトに関するご質問、パートナーシップのご相談など、お気軽にご連絡ください。"
+  title="Contact" 
+  description="Contact Creative Life Labo. Feel free to reach out with questions about our products, partnership inquiries, or any other matters."
+  lang="en"
 >
-  <Header currentPath="/contact" />
+  <Header currentPath="/en/contact" lang="en" />
   
   <main>
     <!-- Hero -->
     <section class="hero">
       <div class="container">
-        <h1>お問い合わせ</h1>
-        <p class="subtitle">ご質問・ご相談はお気軽にどうぞ</p>
+        <h1>Contact</h1>
+        <p class="subtitle">Feel free to reach out</p>
       </div>
     </section>
     
@@ -24,17 +25,17 @@ import Footer from '../components/Footer.astro';
       <div class="container">
         <div class="contact-grid">
           <div class="contact-info">
-            <h2>お問い合わせ方法</h2>
+            <h2>How to Reach Us</h2>
             <p class="info-description">
-              以下のフォームからお問い合わせいただくか、メールにて直接ご連絡ください。
-              通常2〜3営業日以内にご返信いたします。
+              Please use the form below or contact us directly via email.
+              We typically respond within 2-3 business days.
             </p>
             
             <div class="contact-methods">
               <div class="method">
                 <div class="method-icon">📧</div>
                 <div class="method-content">
-                  <h3>メール</h3>
+                  <h3>Email</h3>
                   <a href="mailto:contact@1cll.com">contact@1cll.com</a>
                 </div>
               </div>
@@ -42,48 +43,48 @@ import Footer from '../components/Footer.astro';
               <div class="method">
                 <div class="method-icon">🌐</div>
                 <div class="method-content">
-                  <h3>ウェブサイト</h3>
+                  <h3>Website</h3>
                   <a href="https://1cll.com">https://1cll.com</a>
                 </div>
               </div>
             </div>
             
             <div class="inquiry-types">
-              <h3>よくあるお問い合わせ</h3>
+              <h3>Common Inquiries</h3>
               <ul>
-                <li>プロダクトに関するご質問</li>
-                <li>技術的なサポート</li>
-                <li>パートナーシップのご相談</li>
-                <li>メディア・取材のお問い合わせ</li>
-                <li>その他のご相談</li>
+                <li>Product questions</li>
+                <li>Technical support</li>
+                <li>Partnership inquiries</li>
+                <li>Media & press</li>
+                <li>General inquiries</li>
               </ul>
             </div>
           </div>
           
           <div class="contact-form-wrapper">
             <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-              <!-- Web3Forms Access Key - Replace with your own key -->
+              <!-- Web3Forms Access Key -->
               <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
-              <input type="hidden" name="subject" value="【1cll.com】お問い合わせがありました" />
+              <input type="hidden" name="subject" value="[1cll.com] New Contact Form Submission" />
               <input type="hidden" name="from_name" value="Creative Life Labo Website" />
-              <input type="hidden" name="redirect" value="https://www.1cll.com/contact/thanks" />
+              <input type="hidden" name="redirect" value="https://www.1cll.com/en/contact/thanks" />
               
               <!-- Honeypot Spam Protection -->
               <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
               
               <div class="form-group">
-                <label for="name">お名前 <span class="required">*</span></label>
+                <label for="name">Name <span class="required">*</span></label>
                 <input 
                   type="text" 
                   id="name" 
                   name="name" 
                   required
-                  placeholder="山田 太郎"
+                  placeholder="John Doe"
                 />
               </div>
               
               <div class="form-group">
-                <label for="email">メールアドレス <span class="required">*</span></label>
+                <label for="email">Email <span class="required">*</span></label>
                 <input 
                   type="email" 
                   id="email" 
@@ -94,38 +95,38 @@ import Footer from '../components/Footer.astro';
               </div>
               
               <div class="form-group">
-                <label for="inquiry_type">件名 <span class="required">*</span></label>
+                <label for="inquiry_type">Subject <span class="required">*</span></label>
                 <select id="inquiry_type" name="inquiry_type" required>
-                  <option value="">選択してください</option>
-                  <option value="プロダクトに関するご質問">プロダクトに関するご質問</option>
-                  <option value="技術的なサポート">技術的なサポート</option>
-                  <option value="パートナーシップのご相談">パートナーシップのご相談</option>
-                  <option value="メディア・取材のお問い合わせ">メディア・取材のお問い合わせ</option>
-                  <option value="その他">その他</option>
+                  <option value="">Please select</option>
+                  <option value="Product Question">Product Question</option>
+                  <option value="Technical Support">Technical Support</option>
+                  <option value="Partnership Inquiry">Partnership Inquiry</option>
+                  <option value="Media & Press">Media & Press</option>
+                  <option value="Other">Other</option>
                 </select>
               </div>
               
               <div class="form-group">
-                <label for="message">メッセージ <span class="required">*</span></label>
+                <label for="message">Message <span class="required">*</span></label>
                 <textarea 
                   id="message" 
                   name="message" 
                   rows="6" 
                   required
-                  placeholder="お問い合わせ内容をご記入ください"
+                  placeholder="Please enter your message"
                 ></textarea>
               </div>
               
               <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
-                  送信する
+                  Send Message
                 </button>
               </div>
               
               <div id="form-status" class="form-status"></div>
               
               <p class="form-note">
-                ※ お問い合わせいただいた内容は、プライバシーポリシーに基づき適切に管理いたします。
+                * Your information will be handled in accordance with our Privacy Policy.
               </p>
             </form>
           </div>
@@ -137,20 +138,20 @@ import Footer from '../components/Footer.astro';
     <section class="section alt-contact">
       <div class="container">
         <div class="alt-contact-content">
-          <h2>Run Diaryについてのお問い合わせ</h2>
+          <h2>Run Diary Inquiries</h2>
           <p>
-            Run Diaryに関する技術的なご質問やフィードバックは、
-            アプリ内のサポート機能またはメールからご連絡いただけます。
+            For technical questions or feedback about Run Diary,
+            please use the in-app support feature or contact us via email.
           </p>
-          <a href="/products/run-diary" class="btn btn-secondary">
-            Run Diaryについて詳しく見る
+          <a href="/en/products/run-diary" class="btn btn-secondary">
+            Learn More About Run Diary
           </a>
         </div>
       </div>
     </section>
   </main>
   
-  <Footer />
+  <Footer lang="en" />
 </Layout>
 
 <style>

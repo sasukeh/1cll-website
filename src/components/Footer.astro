@@ -1,7 +1,25 @@
 ---
-const currentYear = new Date().getFullYear();
+export interface Props {
+  lang?: 'ja' | 'en';
+}
 
-const footerLinks = {
+const { lang = 'ja' } = Astro.props;
+const currentYear = new Date().getFullYear();
+const basePath = lang === 'en' ? '/en' : '';
+
+const footerLinks = lang === 'en' ? {
+  products: [
+    { href: '/en/products/run-diary', label: 'Run Diary' },
+  ],
+  company: [
+    { href: '/en/about', label: 'About Us' },
+    { href: '/en/contact', label: 'Contact' },
+  ],
+  legal: [
+    { href: '/en/privacy', label: 'Privacy Policy' },
+    { href: '/en/terms', label: 'Terms of Service' },
+  ],
+} : {
   products: [
     { href: '/products/run-diary', label: 'Run Diary' },
   ],
@@ -14,21 +32,31 @@ const footerLinks = {
     { href: '/terms', label: '利用規約' },
   ],
 };
+
+const labels = lang === 'en' ? {
+  tagline: 'Developing apps and services\nto enhance your lifestyle',
+  products: 'Products',
+  company: 'Company',
+  legal: 'Legal',
+} : {
+  tagline: 'ライフスタイル向上のための<br />アプリ・サービスを開発しています',
+  products: 'プロダクト',
+  company: '会社情報',
+  legal: '法的情報',
+};
 ---
 
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="/" class="footer-logo">Creative Life Labo</a>
-        <p class="footer-tagline">
-          ライフスタイル向上のための<br />アプリ・サービスを開発しています
-        </p>
+        <a href={basePath + '/'} class="footer-logo">Creative Life Labo</a>
+        <p class="footer-tagline" set:html={labels.tagline}></p>
       </div>
       
       <div class="footer-links">
         <div class="footer-column">
-          <h4>プロダクト</h4>
+          <h4>{labels.products}</h4>
           <ul>
             {footerLinks.products.map(link => (
               <li><a href={link.href}>{link.label}</a></li>
@@ -37,7 +65,7 @@ const footerLinks = {
         </div>
         
         <div class="footer-column">
-          <h4>会社情報</h4>
+          <h4>{labels.company}</h4>
           <ul>
             {footerLinks.company.map(link => (
               <li><a href={link.href}>{link.label}</a></li>
@@ -46,7 +74,7 @@ const footerLinks = {
         </div>
         
         <div class="footer-column">
-          <h4>法的情報</h4>
+          <h4>{labels.legal}</h4>
           <ul>
             {footerLinks.legal.map(link => (
               <li><a href={link.href}>{link.label}</a></li>

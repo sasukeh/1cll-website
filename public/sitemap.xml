@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.1cll.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.1cll.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.1cll.com/en/"/>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.1cll.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.1cll.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.1cll.com/en/"/>
     <lastmod>2026-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.1cll.com/products/run-diary/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.1cll.com/products/run-diary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.1cll.com/en/products/run-diary/"/>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.1cll.com/en/products/run-diary/</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.1cll.com/products/run-diary/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.1cll.com/en/products/run-diary/"/>
     <lastmod>2026-01-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +40,19 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.1cll.com/en/about/</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.1cll.com/contact/</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.1cll.com/en/contact/</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -31,7 +64,19 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.1cll.com/en/privacy/</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.1cll.com/terms/</loc>
+    <lastmod>2026-01-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.1cll.com/en/terms/</loc>
     <lastmod>2026-01-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>

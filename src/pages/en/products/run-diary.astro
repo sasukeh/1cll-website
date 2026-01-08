@@ -1,0 +1,750 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+
+const features = [
+  {
+    icon: '🤖',
+    title: 'AI Running Coach',
+    description: 'Powered by Google Gemini AI. Analyzes your training data and provides personalized advice. Answers your questions and helps maintain motivation.',
+  },
+  {
+    icon: '📸',
+    title: 'Auto Screenshot Import',
+    description: 'Just upload a screenshot from your running app. Distance, time, and pace are automatically recognized. No manual entry needed.',
+  },
+  {
+    icon: '📅',
+    title: 'Weekly Training Plans',
+    description: 'Auto-generated weekly training plans based on your goal race and current fitness level. Progress steadily without overtraining.',
+  },
+  {
+    icon: '🎯',
+    title: 'Pacing Strategy',
+    description: 'Optimal pace distribution for your goal time. Simulate race scenarios like conservative starts and negative splits.',
+  },
+  {
+    icon: '⌚',
+    title: 'Garmin/Apple Watch Support',
+    description: 'Sync with Garmin Connect and Apple Watch data for more detailed training analysis.',
+  },
+  {
+    icon: '📊',
+    title: 'Detailed Statistics',
+    description: 'Visualize your growth with monthly/yearly mileage, average pace trends, and goal achievement rates.',
+  },
+];
+
+const useCases = [
+  {
+    title: 'Marathon Beginners',
+    description: 'Get a reasonable training plan for your first marathon finish. Reduce pre-race anxiety with AI guidance.',
+    icon: '🏃‍♂️',
+  },
+  {
+    title: 'Intermediate Runners',
+    description: 'Targeting sub-4 or sub-3:30? Analyze the gap from your current time and get specific improvement points and training menus.',
+    icon: '🏅',
+  },
+  {
+    title: 'Log Enthusiasts',
+    description: 'Easy logging with just one screenshot. Review your running history and feel your progress.',
+    icon: '📝',
+  },
+];
+
+const techStack = [
+  { name: 'Next.js', description: 'React-based framework' },
+  { name: 'Firebase', description: 'Backend, auth & database' },
+  { name: 'Google Gemini AI', description: 'AI coach functionality' },
+];
+---
+
+<Layout 
+  title="Run Diary - AI-Powered Running Journal" 
+  description="Run Diary is an AI-powered running journal app. Features include auto log import from screenshots, weekly training plan generation, and pacing strategies for your goal race."
+  lang="en"
+>
+  <Header currentPath="/en/products/run-diary" lang="en" />
+  
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <span class="badge">🏃 Running App</span>
+            <h1>Run Diary</h1>
+            <p class="tagline">AI-Powered Running Journal</p>
+            <p class="description">
+              From marathon beginners to intermediate runners targeting sub-4 or sub-3.
+              Google Gemini AI serves as your personal running coach,
+              supporting you on your journey to achieve your goals.
+            </p>
+            <div class="hero-buttons">
+              <a href="https://run-diary-2026.web.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+                Try Free Now
+              </a>
+              <a href="#features" class="btn btn-secondary">
+                View Features
+              </a>
+            </div>
+          </div>
+          
+          <div class="hero-image">
+            <div class="phone-mockup large">
+              <div class="phone-screen">
+                <div class="screen-header">
+                  <span class="time">9:41</span>
+                </div>
+                <div class="app-ui">
+                  <div class="app-nav">
+                    <span>🏃</span>
+                    <span class="app-title">Run Diary</span>
+                    <span>⚙️</span>
+                  </div>
+                  <div class="run-card">
+                    <div class="run-date">Jan 8, 2026 (Wed)</div>
+                    <div class="run-stats">
+                      <div class="stat">
+                        <div class="stat-value">10.5</div>
+                        <div class="stat-label">km</div>
+                      </div>
+                      <div class="stat">
+                        <div class="stat-value">52:30</div>
+                        <div class="stat-label">time</div>
+                      </div>
+                      <div class="stat">
+                        <div class="stat-value">5:00</div>
+                        <div class="stat-label">/km</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="ai-chat">
+                    <div class="ai-avatar">🤖</div>
+                    <div class="ai-message">
+                      <p>Great run! Your 5:00/km pace is right on target. Try pushing to 4:50/km next time!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Features -->
+    <section id="features" class="section features">
+      <div class="container">
+        <div class="section-title">
+          <h2>Features</h2>
+          <p>How Run Diary supports your running journey</p>
+        </div>
+        
+        <div class="features-grid">
+          {features.map(feature => (
+            <div class="feature-card">
+              <div class="feature-icon">{feature.icon}</div>
+              <h3>{feature.title}</h3>
+              <p>{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- Screenshots Gallery -->
+    <section class="section screenshots">
+      <div class="container">
+        <div class="section-title">
+          <h2>App Screenshots</h2>
+          <p>See the actual app in action</p>
+        </div>
+        
+        <div class="screenshots-grid">
+          <div class="screenshot-item">
+            <div class="screenshot-frame">
+              <img src="/images/run-diary/en/coach.svg" alt="AI Coach Screen" loading="lazy" />
+            </div>
+            <h4>Ask AI Coach</h4>
+            <p>Get advice based on your training history</p>
+          </div>
+          
+          <div class="screenshot-item">
+            <div class="screenshot-frame">
+              <img src="/images/run-diary/en/history.svg" alt="Training History Screen" loading="lazy" />
+            </div>
+            <h4>Training History</h4>
+            <p>View workouts, recovery, and vital data</p>
+          </div>
+          
+          <div class="screenshot-item">
+            <div class="screenshot-frame">
+              <img src="/images/run-diary/en/plan.svg" alt="Training Plan Screen" loading="lazy" />
+            </div>
+            <h4>Training Plan</h4>
+            <p>Auto-generated 10-day plans for your goal race</p>
+          </div>
+          
+          <div class="screenshot-item">
+            <div class="screenshot-frame">
+              <img src="/images/run-diary/en/suggestion.svg" alt="Today's Suggestion Screen" loading="lazy" />
+            </div>
+            <h4>Today's Suggestion</h4>
+            <p>Optimal training based on your condition</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Use Cases -->
+    <section class="section use-cases">
+      <div class="container">
+        <div class="section-title">
+          <h2>Who It's For</h2>
+          <p>Run Diary supports runners of all levels</p>
+        </div>
+        
+        <div class="use-cases-grid">
+          {useCases.map(useCase => (
+            <div class="use-case-card">
+              <div class="use-case-icon">{useCase.icon}</div>
+              <h3>{useCase.title}</h3>
+              <p>{useCase.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section class="section how-it-works">
+      <div class="container">
+        <div class="section-title">
+          <h2>How It Works</h2>
+          <p>Get started in 3 easy steps</p>
+        </div>
+        
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Create Account</h3>
+            <p>Sign up with Google. Start using immediately.</p>
+          </div>
+          
+          <div class="step-arrow">→</div>
+          
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Add Running Logs</h3>
+            <p>Upload screenshots or enter manually. AI automatically extracts the data.</p>
+          </div>
+          
+          <div class="step-arrow">→</div>
+          
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Ask AI Coach</h3>
+            <p>Training, pacing, nutrition - ask anything. Get personalized advice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Tech Stack -->
+    <section class="section tech">
+      <div class="container">
+        <div class="section-title">
+          <h2>Tech Stack</h2>
+          <p>Built with cutting-edge technology</p>
+        </div>
+        
+        <div class="tech-grid">
+          {techStack.map(tech => (
+            <div class="tech-card">
+              <h4>{tech.name}</h4>
+              <p>{tech.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Start Running with Run Diary Today</h2>
+          <p>Create a free account and start training with your AI coach.</p>
+          <a href="https://run-diary-2026.web.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            Get Started Free →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer lang="en" />
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: 4rem 0 6rem;
+    background: linear-gradient(180deg, var(--color-bg) 0%, var(--color-bg-alt) 100%);
+  }
+  
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  
+  .badge {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #8B5CF6 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-full);
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .tagline {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    font-size: 1.125rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Phone Mockup */
+  .phone-mockup.large {
+    width: 320px;
+    height: 660px;
+    margin: 0 auto;
+    background: #1a1a1a;
+    border-radius: 44px;
+    padding: 14px;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+  }
+  
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 32px;
+    overflow: hidden;
+  }
+  
+  .screen-header {
+    background: #f3f4f6;
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+  
+  .time {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .app-ui {
+    padding: 1rem;
+  }
+  
+  .app-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .app-title {
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .run-card {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    border-radius: 16px;
+    padding: 1.25rem;
+    color: white;
+    margin-bottom: 1rem;
+  }
+  
+  .run-date {
+    font-size: 0.75rem;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+  }
+  
+  .run-stats {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .stat {
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: 1.75rem;
+    font-weight: 700;
+  }
+  
+  .stat-label {
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+  
+  .ai-chat {
+    display: flex;
+    gap: 0.75rem;
+  }
+  
+  .ai-avatar {
+    width: 40px;
+    height: 40px;
+    background: #dbeafe;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+  }
+  
+  .ai-message {
+    background: #f3f4f6;
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    font-size: 0.8125rem;
+    color: #374151;
+    line-height: 1.6;
+  }
+  
+  /* Sections */
+  .section {
+    padding: 5rem 0;
+  }
+  
+  .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .section-title h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .section-title p {
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+  }
+  
+  /* Features */
+  .features {
+    background: var(--color-bg-alt);
+  }
+  
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .feature-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .feature-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    font-size: 0.9375rem;
+  }
+  
+  /* Screenshots Gallery */
+  .screenshots {
+    background: var(--color-bg);
+  }
+  
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+  
+  .screenshot-item {
+    text-align: center;
+  }
+  
+  .screenshot-frame {
+    background: #1a1a1a;
+    border-radius: 24px;
+    padding: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .screenshot-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    display: block;
+  }
+  
+  .screenshot-item h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .screenshot-item p {
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+  }
+  
+  /* Use Cases */
+  .use-cases {
+    background: var(--color-bg-alt);
+  }
+  
+  .use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+  
+  .use-case-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .use-case-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .use-case-card h3 {
+    margin-bottom: 0.75rem;
+  }
+  
+  .use-case-card p {
+    color: var(--color-text-light);
+    line-height: 1.7;
+  }
+  
+  /* How It Works */
+  .how-it-works {
+    background: var(--color-bg);
+  }
+  
+  .steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .step {
+    flex: 1;
+    text-align: center;
+    max-width: 250px;
+  }
+  
+  .step-number {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #8B5CF6 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+  }
+  
+  .step h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .step p {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+  
+  .step-arrow {
+    font-size: 2rem;
+    color: var(--color-text-lighter);
+    padding-top: 0.5rem;
+  }
+  
+  /* Tech Stack */
+  .tech {
+    background: var(--color-bg-alt);
+  }
+  
+  .tech-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .tech-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem 2rem;
+    text-align: center;
+  }
+  
+  .tech-card h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .tech-card p {
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+  }
+  
+  /* CTA */
+  .cta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #8B5CF6 100%);
+    color: white;
+  }
+  
+  .cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cta p {
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    font-size: 1.125rem;
+  }
+  
+  .cta .btn-primary {
+    background: white;
+    color: var(--color-primary);
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+  
+  .cta .btn-primary:hover {
+    background: #f3f4f6;
+  }
+  
+  /* Responsive */
+  @media (max-width: 1024px) {
+    .features-grid,
+    .use-cases-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .screenshots-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .hero-image {
+      order: -1;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .phone-mockup.large {
+      width: 260px;
+      height: 540px;
+    }
+    
+    .features-grid,
+    .use-cases-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .screenshots-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .steps {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .step-arrow {
+      transform: rotate(90deg);
+    }
+    
+    .tech-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
